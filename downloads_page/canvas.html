@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Creator - Eric Fidalgo</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index.html#about">About</a></li>
+            <li><a href="/index.html#projects">Projects</a></li>
+            <li><a href="/index.html#skills">Skills</a></li>
+            <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-container">
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <div class="slides-wrapper">
+                <div class="slide">
+                    <div class="video-container" id="videoContainer">
+                        <img 
+                            src="https://img.youtube.com/vi/JbU7EJcvkMU/maxresdefault.jpg" 
+                            alt="Video Thumbnail" 
+                            class="video-thumbnail"
+                        >
+                        <div class="play-button"></div>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+        
+        <div class="dots">
+            <span class="dot active" hidden ="currentSlide(0)"></span>
+            
+        </div>
+    </div>
+
+        <!-- Project Details -->
+        <div class="project-details">
+            <h1 class="project-title">Course Content Creator</h1>
+            <p class="project-subtitle">Course Content Creator using Aggregation and Operator Overloading</p>
+
+            <div class="project-description">
+                <p>In this project I learned about the idea of using aggregation, operator overloading and dynamic allocation within classes.</p>
+                <br>
+                <p>The program has 3 classes, 2 of which are subclasses from each other. I had to make all three classes communicate with each other and then I had to use operator overloading to process and manage the results.</p>
+                <br>
+                <p class="project-dates"><strong>Development Period:</strong> October 2023 - November 2023</p>
+            </div> 
+            </div>
+
+            <div class="download-section">
+                <h2>Download Project</h2>
+                <p>Source code and documentation available for download</p>
+                <br>
+                <a href="downloads/canvas.zip" class="download-btn">Download ZIP</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Feel free to reach out to me for collaborations or opportunities.</p>
+      <div class="social-links">
+          <a href="https://www.linkedin.com/in/eric-fidalgo/">LinkedIn</a>
+          <a href="mailto:ef22r@fsu.edu">Email</a>
+      </div>
+  </section>
+
+    <script>
+        let slideIndex = 1;
+        let slideInterval;
+        const slidesWrapper = document.querySelector('.slides-wrapper');
+        showSlides(slideIndex);
+        startSlideshow();
+
+        // Add video click handler
+        document.getElementById('videoContainer').addEventListener('click', function() {
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube.com/embed/JbU7EJcvkMU?autoplay=1';
+            iframe.title = 'Project Video';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            
+            this.innerHTML = '';
+            this.appendChild(iframe);
+        });
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+            resetSlideshow();
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            resetSlideshow();
+        }
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+
+            // Update dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            dots[slideIndex-1].classList.add("active");
+
+            // Transform the slides wrapper
+            slidesWrapper.style.transform = `translateX(-${(slideIndex - 1) * 100}%)`;
+        }
+
+        function startSlideshow() {
+            slideInterval = setInterval(() => {
+                changeSlide(0);
+            }, 0); // Change slide every 5 seconds
+        }
+
+        function resetSlideshow() {
+            clearInterval(slideInterval);
+            startSlideshow();
+        }
+
+        // Pause slideshow when hovering over the container
+        document.querySelector('.slideshow-container').addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        // Resume slideshow when mouse leaves the container
+        document.querySelector('.slideshow-container').addEventListener('mouseleave', () => {
+            startSlideshow();
+        });
+    </script>
+</body>
+</html>

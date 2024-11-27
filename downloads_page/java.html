@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java - Eric Fidalgo</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index.html#about">About</a></li>
+            <li><a href="/index.html#projects">Projects</a></li>
+            <li><a href="/index.html#skills">Skills</a></li>
+            <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-container">
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <div class="slides-wrapper">
+                <div class="slide">
+                    <div class="video-container" id="videoContainer">
+                        <img 
+                            src="https://img.youtube.com/vi/1w7Hm6WRVQ0/maxresdefault.jpg" 
+                            alt="Video Thumbnail" 
+                            class="video-thumbnail"
+                        >
+                        <div class="play-button"></div>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+        
+        <div class="dots">
+            <span class="dot active" hidden ="currentSlide(0)"></span>
+            
+        </div>
+    </div>
+
+        <!-- Project Details -->
+        <div class="project-details">
+            <h1 class="project-title">Account Balance Updater</h1>
+            <p class="project-subtitle">This program uses data structures and hashmaps to update peoples information</p>
+
+            <div class="project-description">
+                <p>In this program I learned how to implement hashmaps and use data structures in Java.</p>
+                <br>
+                <p>The program reads in information from text files and uses class implementation and hashmaps of int and type object to process the information and will output it to two different .txt files. This shows an understanding in hashmaps, and file handling.</p>
+                <br>
+                <p class="project-dates"><strong>Development Period:</strong> April 2023</p>
+            </div>  
+            </div>
+
+            <div class="download-section">
+                <h2>Download Project</h2>
+                <p>Source code and documentation available for download</p>
+                <br>
+                <a href="downloads/stack.zip" class="download-btn">Download ZIP</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Feel free to reach out to me for collaborations or opportunities.</p>
+      <div class="social-links">
+          <a href="https://www.linkedin.com/in/eric-fidalgo/">LinkedIn</a>
+          <a href="mailto:ef22r@fsu.edu">Email</a>
+      </div>
+  </section>
+
+    <script>
+        let slideIndex = 1;
+        let slideInterval;
+        const slidesWrapper = document.querySelector('.slides-wrapper');
+        showSlides(slideIndex);
+        startSlideshow();
+
+        // Add video click handler
+        document.getElementById('videoContainer').addEventListener('click', function() {
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube.com/embed/1w7Hm6WRVQ0?autoplay=1';
+            iframe.title = 'Project Video';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            
+            this.innerHTML = '';
+            this.appendChild(iframe);
+        });
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+            resetSlideshow();
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            resetSlideshow();
+        }
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+
+            // Update dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            dots[slideIndex-1].classList.add("active");
+
+            // Transform the slides wrapper
+            slidesWrapper.style.transform = `translateX(-${(slideIndex - 1) * 100}%)`;
+        }
+
+        function startSlideshow() {
+            slideInterval = setInterval(() => {
+                changeSlide(0);
+            }, 0); // Change slide every 5 seconds
+        }
+
+        function resetSlideshow() {
+            clearInterval(slideInterval);
+            startSlideshow();
+        }
+
+        // Pause slideshow when hovering over the container
+        document.querySelector('.slideshow-container').addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        // Resume slideshow when mouse leaves the container
+        document.querySelector('.slideshow-container').addEventListener('mouseleave', () => {
+            startSlideshow();
+        });
+    </script>
+</body>
+</html>
