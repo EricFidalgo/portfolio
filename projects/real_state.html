@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess - Eric Fidalgo</title>
+    <title>Real State - Eric Fidalgo</title>
     <link rel="icon" type="image/x-icon" href="../images/logo.ico">
     <link rel="stylesheet" href="./styles2.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -31,60 +31,67 @@
         <div class="slideshow-container">
             <div class="slides-wrapper">
                 <div class="slide">
-                    <div class="video-container" id="videoContainer">
-                        <img 
-                            src="https://img.youtube.com/vi/_FmuFbDI-n4/maxresdefault.jpg" 
-                            alt="Video Thumbnail" 
-                            class="video-thumbnail"
-                        >
-                        <div class="play-button"></div>
-                    </div>
+                    <img src="./images/house_listings.jpg" alt="Project Screenshot 1">
+                </div>
+                <div class="slide">
+                    <img src="./images/agents.jpg" alt="Project Screenshot 1">
+                </div>
+                <div class="slide">
+                    <img src="./images/buyers.jpg" alt="Project Screenshot 2">
+                </div>
+                <div class="slide">
+                    <img src="./images/search_houses.jpg" alt="Project Screenshot 3">
                 </div>
             </div>
-        
 
-        
-        
-        <div class="dots">
-            <span class="dot active" hidden ="currentSlide(0)"></span>
-            
+
+            <button class="prev" onclick="changeSlide(-1)">❮</button>
+            <button class="next" onclick="changeSlide(1)">❯</button>
+
+            <div class="dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
         </div>
-    </div>
 
         <!-- Project Details -->
         <div class="project-details">
-            <h1 class="project-title">Chess Game</h1>
+            <h1 class="project-title">Real Estate Agent & Property Listings Website</h1>
 
             <div class="project-description">
-                <p><strong>Objective:</strong> Gain hands-on experience with object-oriented programming (OOP) by implementing classes and encapsulation principles using getter and setter functions.</p>
+                <p><strong>Problem:</strong> Accessing and organizing real estate agent information and property listings manually can be time-consuming and inefficient, requiring a more structured and searchable solution.</p>
                 <br>
-                <p><strong>Solution:</strong> Developed a program that demonstrates encapsulation through the use of getter and setter methods within classes. Implemented a chessboard output to provide a visual representation of the game's state, reinforcing object interaction within the program.</p>
+                <p><strong>Solution:</strong> Built a dynamic website using PHP with a MySQL backend, allowing users to efficiently query and retrieve real estate agent details and property listings. Implemented a structured database schema for optimized search performance and seamless data retrieval.</p>
                 <br>
-                <p><strong>Impact:</strong> Strengthened understanding of OOP fundamentals by applying encapsulation techniques, improving code organization, and introducing structured class-based design.</p>
+                <p><strong>Impact:</strong> Improved data accessibility by enabling users to quickly find real estate agents and property listings, enhancing user experience and reducing search time. The system ensures efficient query handling, making property searches more seamless and reliable.</p>
             </div>
         </div>
-            
-            <div class="project-metadata">
-                <div class="metadata-item">
-                    <h3>Tools Used</h3>
-                    <ul>
-                        <li>C++</li>
-                    </ul>
-                </div>
+        
+        
 
-                <div class="metadata-item">
-                    <h3>Development Timeline</h3>
-                    <ul>
-                        <li>Completed: September 2023</li>
-                    </ul>
-                </div>
+        <div class="project-metadata">
+            <div class="metadata-item">
+                <h3>Tools Used</h3>
+                <ul>
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>XAAMP</li>
+                </ul>
+            </div>
 
-                
+            <div class="metadata-item">
+                <h3>Development Timeline</h3>
+                <ul>
+                    <li>Completed: November 2024</li>
+                </ul>
+            </div>
             </div>
 
             <div class="download-section">
                 <h2>Download Project</h2>
-                <a href="./downloads/chess.zip" class="download-btn">Download ZIP</a>
+                <a href="./downloads/real_state.zip" class="download-btn">Download ZIP</a>
             </div>
         </div>
     </div>
@@ -99,7 +106,8 @@
             <i class="fa-brands fa-linkedin"></i>
         </a>
         </div>
-    </section>  
+    </section> 
+
     <script>
         let slideIndex = 1;
         let slideInterval;
@@ -110,7 +118,7 @@
         // Add video click handler
         document.getElementById('videoContainer').addEventListener('click', function() {
             const iframe = document.createElement('iframe');
-            iframe.src = 'https://www.youtube.com/embed/_FmuFbDI-n4?autoplay=1';
+            iframe.src = 'https://www.youtube.com/embed/JbU7EJcvkMU?autoplay=1';
             iframe.title = 'Project Video';
             iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
             iframe.allowFullscreen = true;
@@ -166,7 +174,6 @@
         document.querySelector('.slideshow-container').addEventListener('mouseleave', () => {
             startSlideshow();
         });
-
 
 
         document.querySelector('.menu-toggle').addEventListener('click', function() {

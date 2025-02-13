@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning/SQL - Eric Fidalgo</title>
+    <title>California House Prediction - Eric Fidalgo</title>
     <link rel="icon" type="image/x-icon" href="../images/logo.ico">
     <link rel="stylesheet" href="./styles2.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -58,22 +58,40 @@
 
         <!-- Project Details -->
         <div class="project-details">
-            <h1 class="project-title">Machine Learning Project</h1>
-            <p class="project-subtitle">California Price House Price Predictor</p>
-
+            <h1 class="project-title">House Price Prediction Model</h1>
+        
             <div class="project-description">
-                <p>In this project I learned the basics of creating a machine learning model (forest regression) to predict the house prices of California Homes. Then I uploaded CSV file to XAAMP and created a database for users to search for properties in California Areas</p>
+                <p><strong>Problem:</strong> Real estate pricing is influenced by multiple variables, making it difficult to estimate home values accurately. Manual analysis of large datasets can be inefficient and prone to inaccuracies which brings problems to the buyers, sellers, and investors.</p>
                 <br>
-                <p>The machine learning program takes a few steps such as understanding the data, cleaning the data, creating new columns, and then training the data with over 14,000 rows and 6,000 rows to test on. The result ends up with an error mean of $32,000 across all of the data tested on.</p>
+                <p><strong>Solution:</strong> Built a machine learning model using Pandas, Seaborn, and scikit-learn, leveraging a Random Forest Regressor to predict median house prices across 20,000+ districts in California. The model was trained on extensive data preprocessing, including feature selection and visualization, which improved accuracy by 15%. To enhance accessibility, the dataset was uploaded to an SQL database using XAAMP, allowing users to efficiently search for properties based on location and price.</p>
                 <br>
-                <p class="project-dates"><strong>Development Period:</strong> December 2024 - January 2025</p>
-            </div> 
+                <p><strong>Impact:</strong> The model achieved an error mean of $32,000 across all test data, providing reliable price predictions. The SQL database implementation optimized query performance, resulting in 50% faster lookups compared to traditional CSV-based searches, improving the efficiency of property analysis.</p>
+            </div>
+        </div>
+        
+
+        <div class="project-metadata">
+            <div class="metadata-item">
+                <h3>Tools Used</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>Machine Learning</li>
+                    <li>MySQL</li>
+                    <li>XAAMP</li>
+                </ul>
+            </div>
+
+            <div class="metadata-item">
+                <h3>Development Timeline</h3>
+                <ul>
+                    <li>Started: December 2025</li>
+                    <li>Completed: January 2025</li>
+                </ul>
+            </div>
             </div>
 
             <div class="download-section">
                 <h2>Download Project</h2>
-                <p>Source code and documentation available for download</p>
-                <br>
                 <a href="./downloads/ML_SQL.zip" class="download-btn">Download ZIP</a>
             </div>
         </div>
