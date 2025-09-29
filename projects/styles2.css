@@ -267,6 +267,14 @@ nav ul li a:hover {
   margin-bottom: 2rem;
 }
 
+.deeper-look-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
 .project-metadata {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -405,4 +413,18 @@ h2 {
   .hero p {
       font-size: 1.2rem;
   }
+}
+
+/* New container to center the image */
+.project-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.project-image-container .inline-project-image {
+    max-width: 700px; 
+    width: 100%;
+    border-radius: 10px;
 }
