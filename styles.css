@@ -1,0 +1,529 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+ }
+
+ /* Navigation Styles */
+ .nav-wrapper {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+ }
+
+ /* Hamburger Menu */
+ .menu-toggle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 1001;
+ }
+
+ .menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #8C6A4B;
+  margin: 5px 0;
+  transition: 0.4s;
+ }
+
+ nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+ }
+
+ nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+ }
+
+ nav ul li {
+  margin: 0 1.5rem;
+ }
+
+ nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+ }
+
+ nav ul li a:hover {
+  color: #8C6A4B;
+ }
+
+ @media (max-width: 768px) {
+  .menu-toggle {
+   display: block; /* Show the hamburger menu */
+  }
+
+  nav {
+   position: fixed;
+   top: 0;
+   left: -100%; /* Hide off-screen by default */
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.9);
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   transition: left 0.3s ease;
+   z-index: 1000;
+  }
+
+  nav.active {
+   left: 0; /* Slide in when active */
+  }
+
+  nav ul {
+   flex-direction: column;
+   text-align: center;
+  }
+
+  nav ul li {
+   margin: 1rem 0;
+  }
+ }
+
+ /* Hero Section */
+ .hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+   url('./images/dunes.jpg') center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+ }
+
+ .intro {
+  text-align: center;
+ }
+
+ .hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+ }
+
+ .hero p {
+  font-size: 1.5rem;
+  max-width: 800px;
+ }
+
+ /* Sections */
+ section {
+  padding: 5rem 2rem;
+ }
+
+ .about,
+ .projects,
+ .skills {
+  max-width: 1200px;
+  margin: 0 auto;
+ }
+
+ h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+ }
+
+ /* About Section */
+ .about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background-color: #fff; /* Changed to white */
+  padding: 3rem;
+  border-radius: 12px; /* Slightly less rounded */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer shadow */
+ }
+
+ .about-text {
+  line-height: 1.7; /* Slightly tighter line height */
+  color: #4a4a4a; /* Darker text for better readability */
+ }
+
+ .about-text h3 {
+  color: #8C6A4B;
+  border-bottom: 2px solid #8C6A4B;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+ }
+
+ .about-text .intro {
+  font-weight: 500;
+  text-align: left;
+ }
+
+ .about-text ul {
+  list-style-type: none;
+  padding-left: 0;
+ }
+
+ .about-text ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0.5rem;
+ }
+
+ .about-text ul li:before {
+  content: '•';
+  color: #8C6A4B;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+ }
+
+ /* Projects Section */
+ .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider cards */
+  gap: 2.5rem; /* Increased gap */
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+ }
+
+ .project-card {
+  background: #fff; /* Pure white project cards */
+  border-radius: 12px; /* Slightly more rounded corners */
+  padding: 2rem; /* Increased padding */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Refined shadow */
+  text-align: center; /* Center align text for project card content */
+  width: 100%;
+  max-width: 380px; /* Slightly wider max-width */
+  transition: box-shadow 0.3s ease; /* Added transition for hover effect */
+  display: flex; /* Enable flexbox for project card */
+  flex-direction: column; /* Stack project card content vertically */
+ }
+
+ .project-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+ }
+
+ .project-card h3 {
+  font-size: 1.6rem; /* Slightly larger title */
+  margin-bottom: 1rem;
+  color: #333; /* Darker project title */
+  text-align: left; /* Reset title text alignment to left */
+ }
+
+ .project-card p {
+  margin-bottom: 1.2rem; /* Increased paragraph margin */
+  color: #555; /* Slightly lighter description text */
+  line-height: 1.6; /* Improved line height for readability */
+  text-align: left; /* Reset description text alignment to left */
+ }
+
+ .project-card .project-technologies {
+  margin-bottom: 1rem;
+  text-align: left; /* Align technologies text to left */
+ }
+
+ .project-card .project-link {
+  margin-top: auto; /* Push project link to the bottom */
+  align-self: center; /* Center the button within the card */
+ }
+
+
+ /* Skills Section */
+ .skills {
+  padding: 5rem 2rem;
+ }
+
+ .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+ }
+
+ .skill-category {
+  background-color: #fff; /* Changed to white */
+  border-radius: 12px; /* Slightly less rounded */
+  padding: 2.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer shadow for skills */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for shadow */
+ }
+
+ .skill-category:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* More pronounced shadow on hover */
+ }
+
+ .skill-category h3 {
+  color: #8C6A4B;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #8C6A4B;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+ }
+
+ .skill-list {
+  list-style: none;
+  padding: 0;
+ }
+
+ .skill-list li {
+  margin: 0.9rem 0; /* Adjusted skill list item margin */
+  font-size: 1.1rem;
+  color: #4a4a4a; /* Darker skill text */
+  position: relative;
+ }
+
+ /* Contact Section */
+ .contact {
+  text-align: center;
+  background-color: #8C6A4B;
+  color: white;
+  padding: 4rem 2rem;
+ }
+
+ .contact h2 {
+  color: white;
+  margin-bottom: 2.5rem;
+  font-size: 2.7rem;
+ }
+
+ .contact .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+ }
+
+ .social-links a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .social-links a i {
+  font-size: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+ }
+
+ .social-links a:hover i {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+ }
+
+ .project-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #C68C53;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px; /* Slightly more rounded project links */
+  transition: all 0.3s ease;
+  font-weight: 500;
+  margin-top: 1.2rem; /* Increased margin above project link */
+ }
+
+ .project-link:hover {
+  background: #8C6A4B;
+ }
+
+ /* Mobile Responsive Styles */
+ @media (max-width: 768px) {
+  .about-content {
+   grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+   font-size: 2.5rem;
+  }
+
+  .hero p {
+   font-size: 1.2rem;
+  }
+
+  .skills-grid {
+   grid-template-columns: 1fr;
+  }
+
+  .social-links {
+   flex-direction: column;
+   gap: 1.5rem;
+  }
+
+  .projects-grid {
+   grid-template-columns: 1fr; /* Stack project cards on mobile */
+  }
+
+  .project-card {
+   max-width: 100%; /* Project cards take full width on mobile */
+  }
+ }
+
+ hr {
+  border: none;
+  height: 2px;
+  background-color: #8C6A4B;
+  width: 80%;
+  margin: 4rem auto;
+  opacity: 0.3;
+ }
+
+ .sort-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  margin-left: 2rem;
+  flex-wrap: wrap;
+}
+
+.sort-buttons button {
+  background: #f8f9fa; /* Keep original sort button background */
+  color: #333; /* Keep original sort button text color */
+  border: 1px solid #dee2e6; /* Keep original sort button border */
+  padding: 0.6rem 1.2rem; /* Revert to original sort button padding */
+  border-radius: 6px; /* Revert to original sort button border-radius */
+  font-size: 0.9rem; /* Revert to original sort button font size */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sort-buttons button:hover {
+  background: #e9ecef; /* Keep original sort button hover background */
+  border-color: #ced4da; /* Keep original sort button hover border */
+  color: inherit; /* Revert to default text color inheritance - #333 */
+}
+
+.sort-buttons button:active {
+  background: #dee2e6; /* Keep original sort button active background */
+  border-color: #ced4da; /* Keep original sort button active border */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Keep original sort button active shadow */
+}
+
+/* Add icons to buttons */
+.sort-buttons button::before {
+  content: '';
+  margin-right: 6px; /* Revert to original icon margin-right */
+  font-size: 0.9rem; /* Revert to original icon font size */
+}
+
+#sort-preference::before {
+  content: "\f005"; /* Star Icon - Preference */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+#sort-date::before {
+  content: "\f073"; /* Calendar Icon - Date */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+}
+
+
+/* Active state */
+.sort-buttons button.active {
+  background: #e9ecef; /* Keep original sort button active state background */
+  border-color: #ced4da; /* Keep original sort button active state border */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Revert to original sort button active state shadow */
+}
+
+
+/* Certifications Section Container */
+.certifications {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Section Title */
+.certifications h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: left; /* Adjust to 'center' if you prefer */
+}
+
+/* Individual Certification Card */
+.certification-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Certification Image */
+.certification-card img {
+  width: 120px;     /* Adjust size as needed */
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+/* Certification Info Container */
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Certification Name Heading */
+.cert-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Certification Link */
+.cert-info h3 a {
+  color: #0077B5; /* LinkedIn-like color; change to suit your palette */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hover State for the Certification Link */
+.cert-info h3 a:hover {
+  text-decoration: underline;
+}
+
+/* View More Link at the Bottom */
+.view-more {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.view-more a {
+  color: #0077B5;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.view-more a:hover {
+  text-decoration: underline;
+}
