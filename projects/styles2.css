@@ -267,6 +267,12 @@ nav ul li a:hover {
   margin-bottom: 2rem;
 }
 
+.project-description ul {
+  list-style-position: outside;
+  padding-left: 40px; /* Adjust this value to increase/decrease indentation */
+  margin-top: 1rem;
+}
+
 .deeper-look-title {
   font-size: 1.5rem;
   color: #333;
