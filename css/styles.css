@@ -1,0 +1,183 @@
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)),
+    url("../images/dunes.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 2rem;
+}
+
+/* Sections */
+section {
+  padding: 6rem 0;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color);
+}
+
+/* About Section */
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--text-secondary-color);
+  margin-bottom: 1rem;
+}
+
+.about-text a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.about-education {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.about-education h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Projects Section */
+.sort-buttons {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sort-buttons button {
+  background: none;
+  border: 1px solid var(--surface-color);
+  color: var(--text-secondary-color);
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sort-buttons button.active,
+.sort-buttons button:hover {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border-color: var(--primary-color);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--surface-color);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  color: var(--text-secondary-color);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.project-card .technologies {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.project-link {
+  align-self: flex-start;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.skill-category {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.skill-category ul {
+  list-style: none;
+}
+
+.skill-category li {
+  color: var(--text-secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
