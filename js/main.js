@@ -37,6 +37,21 @@ document.addEventListener("DOMContentLoaded", () => {
    * @param {string} sortCriteria - The criteria to sort projects by ('preference' or 'date').
    */
   const renderProjects = (sortCriteria) => {
+    /**
+     * Formats a date string (e.g., "YYYY-MM-DD") into a more readable format ("Month Year").
+     * @param {string} dateString - The date string to format.
+     * @returns {string} The formatted date.
+     */
+    const formatDate = (dateString) => {
+      const date = new Date(dateString);
+      // Adjust for timezone to prevent off-by-one day errors
+      date.setUTCDate(date.getUTCDate() + 1);
+      return date.toLocaleDateString("en-US", {
+        month: "long",
+        year: "numeric",
+      });
+    };
+
     // Clear the existing projects before rendering new ones.
     projectsGrid.innerHTML = "";
 
@@ -56,13 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const projectCard = document.createElement("div");
       projectCard.classList.add("project-card");
       projectCard.innerHTML = `
-                <div class="project-card-content">
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                    <p class="technologies"><strong>Tools:</strong> ${project.technologies}</p>
-                    <a href="${project.link}" class="btn btn-primary project-link">View Project</a>
-                </div>
-            `;
+        <div class="project-card-content">
+            <p class="project-card-date">${formatDate(project.date)}</p>
+            <h3>${project.title}</h3>
+            <p class="project-card-description">${project.description}</p>
+            <p class="technologies">${project.technologies}</p>
+            <a href="${
+              project.link
+            }" class="btn btn-primary project-link">View Details</a>
+        </div>
+      `;
       projectsGrid.appendChild(projectCard);
     });
   };

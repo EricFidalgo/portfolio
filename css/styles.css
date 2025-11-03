@@ -122,16 +122,26 @@ section h2::after {
   margin-bottom: 1rem;
 }
 
-.project-card p {
+.project-card-date {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-card-description {
   color: var(--text-secondary-color);
   margin-bottom: 1rem;
   flex-grow: 1;
 }
 
 .project-card .technologies {
+  flex-grow: 0; /* Prevent this from growing */
   font-size: 0.9rem;
   color: var(--text-secondary-color);
   margin-bottom: 1.5rem;
+  font-weight: 400;
 }
 
 .project-link {
@@ -180,4 +190,52 @@ section h2::after {
   .skills-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.skill-category {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+.skill-category:hover {
+  transform: translateY(-5px); /* Add lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.project-card {
+  background: var(--surface-color);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent; /* Add transparent border initially */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add border-color to transition */
+}
+
+.project-card:hover {
+  transform: translateY(-8px); /* Increase lift */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Softer, larger shadow */
+  border-color: var(--primary-color); /* Add primary color border on hover */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to sections */
+.about,
+.projects,
+.skills {
+  animation: fadeIn 0.8s ease-out forwards;
 }
