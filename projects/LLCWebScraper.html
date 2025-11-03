@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLC Web Scraper - Eric Fidalgo</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo.ico" />
+    <link rel="stylesheet" href="css/project_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">Eric Fidalgo</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-header">
+        <div class="container">
+            <h1>Florida Biz Scraper </h1>
+            <p class="project-meta">Completed: July 2024</p>
+        </div>
+    </header>
+
+    <main class="project-content container">
+
+        <div class="slideshow-container">
+            <div class="slides-wrapper">
+              
+              <div class="slide">
+                    <div class="video-container" id="videoContainer">
+                        <img 
+                            src="https://img.youtube.com/vi/0UrxO8MvBnE/maxresdefault.jpg" 
+                            alt="Video Thumbnail" 
+                            class="video-thumbnail"
+                        >
+                        <div class="play-button"></div>
+                    </div>
+                </div>
+    
+              <div class="slide">
+                    <img src="./images/llc_webscraping_1.jpg" alt="Project Screenshot 2">
+                </div>
+                <div class="slide">
+                    <img src="./images/llc_webscraping_2.jpg" alt="Project Screenshot 3">
+                </div>
+
+            </div> <button class="prev" onclick="changeSlide(-1)">❮</button>
+            <button class="next" onclick="changeSlide(1)">❯</button>
+    
+            <div class="dots">
+              <span class="dot active" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            
+        </div>
+        <section class="project-section">
+            <h2>The Problem</h2>
+            <p>Real estate wholesalers and business researchers often rely on Florida’s LLC database for ownership details, addresses, and associated records. However, manually retrieving and organizing this data is time-consuming and inefficient, limiting productivity and scalability.</p>
+        </section>
+
+        <section class="project-section">
+            <h2>The Solution</h2>
+            <p>Developed a Python-based web scraping application that automates the extraction of LLC ownership data from <a href="https://sunbiz.org" target="_blank"> Sunbiz.org. </a> The software processes over 100 companies per minute, converting the extracted information into a structured, modern Excel file. Additionally, security enhancements were implemented, including a Two-Factor Authentication (2FA) system using Amazon WorkMail and URL extension removal via AWS Lambda to ensure data integrity and platform security.</p>
+        </section>
+
+        <section class="project-section">
+            <h2>The Impact</h2>
+            <p>The tool significantly reduced manual workload, increasing data retrieval efficiency by automating an otherwise tedious process. Furthermore, the project laid the groundwork for a scalable business model by establishing <b>https://floridabizscraper.com</b> <i>(inactive)</i>,  with future subscription-based revenue capabilities.</p>
+        </section>
+
+        <section class="project-section">
+            <h2>Tools Used</h2>
+            <ul class="tool-list">
+                <li>Python</li>
+                <li>AWS</li>
+                <li>BeautifulSoup</li>
+                <li>PyQt6</li>
+            </ul>
+        </section>
+
+        <section class="project-section download-section">
+            <h2>Currently Private</h2>
+            <p>I am working on publicly releasing this program for commercial use. If you would like to see this program, please contact me through any of the available platforms.</p>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="social-links">
+                <a href="mailto:ericfidalgo.cs@fsu.edu" class="social-link">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/eric-fidalgo/" class="social-link" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/eric-fidalgo/details/featured/" class="social-link" target="_blank">
+                    <i class="fa-solid fa-file-lines"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Eric Fidalgo. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/project_script.js"></script>
+</body>
+</html>

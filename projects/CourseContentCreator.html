@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Content Creator - Eric Fidalgo</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo.ico" />
+    <link rel="stylesheet" href="css/project_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="../index.html" class="nav-logo">Eric Fidalgo</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#skills" class="nav-link">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <header class="project-header">
+      <div class="container">
+        <h1>Course Content Creator</h1>
+        <p class="project-meta">Completed: November 2023</p>
+      </div>
+    </header>
+
+    <main class="project-content container">
+      <section class="project-section">
+        <h2>Objective</h2>
+        <p>
+          Develop a robust object-oriented program utilizing key principles such
+          as aggregation, operator overloading, and dynamic memory allocation to
+          improve class interaction and efficiency.
+        </p>
+      </section>
+
+      <div class="slideshow-container">
+        <div class="slides-wrapper">
+          <div class="slide">
+            <div class="video-container" id="videoContainer">
+              <img
+                src="https://img.youtube.com/vi/JbU7EJcvkMU/maxresdefault.jpg"
+                alt="Video Thumbnail"
+                class="video-thumbnail"
+              />
+              <div class="play-button"></div>
+            </div>
+          </div>
+        </div>
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+
+        <div class="dots">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+        </div>
+      </div>
+
+      <section class="project-section">
+        <h2>Solution</h2>
+        <p>
+          Designed a system with three interconnected classes, including two
+          subclasses, to demonstrate effective class hierarchy and
+          communication. Implemented operator overloading to streamline data
+          processing and leveraged dynamic memory allocation for optimized
+          resource management.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Impact</h2>
+        <p>
+          Improved program efficiency by reducing redundant operations,
+          enhancing memory management, and ensuring seamless interaction between
+          class components.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Tools Used</h2>
+        <ul class="tool-list">
+          <li>C++</li>
+        </ul>
+      </section>
+
+      <section class="project-section download-section">
+        <h2>Download Project</h2>
+        <a href="./downloads/canvas.zip" class="btn btn-primary"
+          >Download ZIP</a
+        >
+      </section>
+    </main>
+
+    <footer id="contact" class="footer">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="social-links">
+          <a href="mailto:ericfidalgo.cs@fsu.edu" class="social-link">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eric-fidalgo/"
+            class="social-link"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eric-fidalgo/details/featured/"
+            class="social-link"
+            target="_blank"
+          >
+            <i class="fa-solid fa-file-lines"></i>
+          </a>
+        </div>
+        <p>&copy; 2025 Eric Fidalgo. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="js/project_script.js"></script>
+  </body>
+</html>
