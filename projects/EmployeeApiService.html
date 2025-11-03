@@ -1,133 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee Management API - Eric Fidalgo</title>
     <link rel="icon" type="image/x-icon" href="../images/logo.ico" />
     <link rel="stylesheet" href="css/project_style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="container">
-            <a href="../index.html" class="nav-logo">Eric Fidalgo</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+      <div class="container">
+        <a href="../index.html" class="nav-logo">Eric Fidalgo</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#skills" class="nav-link">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
+      </div>
     </nav>
 
     <header class="project-header">
-        <div class="container">
-            <h1>Employee Management RESTful API</h1>
-            <p class="project-meta">Completed: October 2025</p>
-        </div>
+      <div class="container">
+        <h1>Employee Management RESTful API</h1>
+        <p class="project-meta">Completed: October 2025</p>
+      </div>
     </header>
 
     <main class="project-content container">
-        <section class="project-section">
-            <h2>The Problem</h2>
-            <p>The company has an existing employee management system that is deeply integrated with other services, making it impossible to replace immediately. However, they have purchased a new SaaS platform, "Employees-R-US," and need a way for it to interact with the current employee data.</p>
-        </section>
+      <section class="project-section">
+        <h2>The Problem</h2>
+        <p>
+          The company has an existing employee management system that is deeply
+          integrated with other services, making it impossible to replace
+          immediately. However, they have purchased a new SaaS platform,
+          "Employees-R-US," and need a way for it to interact with the current
+          employee data.
+        </p>
+      </section>
 
-        <div class="slideshow-container">
-            <div class="slides-wrapper">
-              
-              <div class="slide">
-                <img src="./images/GET.png" alt="GET Request Example">
-              </div>
-    
-              <div class="slide">
-                <img src="./images/GET_ALL.png" alt="GET ALL Request Example">
-              </div>
+      <div class="slideshow-container">
+        <div class="slides-wrapper">
+          <div class="slide">
+            <img src="./images/GET.png" alt="GET Request Example" />
+          </div>
 
-              <div class="slide">
-                <img src="./images/POST.png" alt="POST Request Example">
-              </div>
+          <div class="slide">
+            <img src="./images/GET_ALL.png" alt="GET ALL Request Example" />
+          </div>
 
-              <div class="slide">
-                <img src="./images/UPDATE.png" alt="UPDATE Request Example">
-              </div>
+          <div class="slide">
+            <img src="./images/POST.png" alt="POST Request Example" />
+          </div>
 
-              <div class="slide">
-                <img src="./images/DELETE.png" alt="DELETE Request Example">
-              </div>
+          <div class="slide">
+            <img src="./images/UPDATE.png" alt="UPDATE Request Example" />
+          </div>
 
-            </div> <button class="prev" onclick="changeSlide(-1)">❮</button>
-            <button class="next" onclick="changeSlide(1)">❯</button>
-    
-            <div class="dots">
-              <span class="dot active" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-              <span class="dot" onclick="currentSlide(4)"></span>
-              <span class="dot" onclick="currentSlide(5)"></span>
-            </div>
-            
+          <div class="slide">
+            <img src="./images/DELETE.png" alt="DELETE Request Example" />
+          </div>
         </div>
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
 
-        <section class="project-section">
-            <h2>The Solution</h2>
-            <p>A REST API is built using Java and the Spring Boot framework to act as a bridge. This API exposes specific, secure endpoints for creating and retrieving employee information. It follows a standard layered architecture:</p>
-            <ul>
-                <li><b>EmployeeController:</b> Handles the incoming web requests.</li>
-                <li><b>EmployeeService:</b> Contains the core business logic.</li>
-                <li><b>EmployeeRepository:</b> Manages data persistence with a database.</li>
-                <li><b>Data Transfer Objects (DTOs) and Mappers:</b> Used to control and transform the data sent between the client and the database, ensuring that only necessary information is exposed.</li>
-            </ul>
-        </section>
+        <div class="dots">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
 
-        <section class="project-section">
-            <h2>The Impact</h2>
-            <p>This API allows the new "Employees-R-US" platform to consume and manage employee data from the company's existing system without requiring a disruptive, large-scale migration. It effectively decouples the new SaaS platform from the legacy system, enabling a smoother, more gradual transition while allowing the company to begin leveraging its new software investment immediately.</p>
-        </section>
+      <section class="project-section">
+        <h2>The Solution</h2>
+        <p>
+          A REST API is built using Java and the Spring Boot framework to act as
+          a bridge. This API exposes specific, secure endpoints for creating and
+          retrieving employee information. It follows a standard layered
+          architecture:
+        </p>
+        <ul>
+          <li><b>EmployeeController:</b> Handles the incoming web requests.</li>
+          <li><b>EmployeeService:</b> Contains the core business logic.</li>
+          <li>
+            <b>EmployeeRepository:</b> Manages data persistence with a database.
+          </li>
+          <li>
+            <b>Data Transfer Objects (DTOs) and Mappers:</b> Used to control and
+            transform the data sent between the client and the database,
+            ensuring that only necessary information is exposed.
+          </li>
+        </ul>
+      </section>
 
-        <section class="project-section">
-            <h2>Tools Used</h2>
-            <ul class="tool-list">
-                <li>Java</li>
-                <li>SpringBoot</li>
-                <li>PostMan</li>
-                <li>Gradle</li>
-            </ul>
-        </section>
+      <section class="project-section">
+        <h2>The Impact</h2>
+        <p>
+          This API allows the new "Employees-R-US" platform to consume and
+          manage employee data from the company's existing system without
+          requiring a disruptive, large-scale migration. It effectively
+          decouples the new SaaS platform from the legacy system, enabling a
+          smoother, more gradual transition while allowing the company to begin
+          leveraging its new software investment immediately.
+        </p>
+      </section>
 
-        <section class="project-section download-section">
-            <h2>Download Project</h2>
-            <a href="./downloads/employee-api-service.zip" class="btn btn-primary">Download ZIP</a>
-        </section>
+      <section class="project-section">
+        <h2>Tools Used</h2>
+        <ul class="tool-list">
+          <li>Java</li>
+          <li>SpringBoot</li>
+          <li>PostMan</li>
+          <li>Gradle</li>
+        </ul>
+      </section>
+
+      <section class="project-section download-section">
+        <h2>Project Files</h2>
+        <div class="download-buttons">
+          <a
+            href="https://github.com/EricFidalgo/EmployeeApiService/archive/refs/heads/main.zip"
+            class="btn btn-primary"
+            download
+            >Download ZIP</a
+          >
+          <a
+            href="https://github.com/EricFidalgo/EmployeeApiService.git"
+            class="btn btn-secondary"
+            target="_blank"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="clone-section">
+          <p>Or clone the repository:</p>
+          <div class="clone-command-container">
+            <pre><code>git clone https://github.com/EricFidalgo/EmployeeApiService.git</code></pre>
+            <button class="copy-btn" title="Copy to clipboard">
+              <i class="far fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer id="contact" class="footer">
-        <div class="container">
-            <h2>Contact</h2>
-            <div class="social-links">
-                <a href="mailto:ericfidalgo.cs@fsu.edu" class="social-link">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/eric-fidalgo/" class="social-link" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/eric-fidalgo/details/featured/" class="social-link" target="_blank">
-                    <i class="fa-solid fa-file-lines"></i>
-                </a>
-            </div>
-            <p>&copy; 2025 Eric Fidalgo. All Rights Reserved.</p>
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="social-links">
+          <a href="mailto:ericfidalgo.cs@fsu.edu" class="social-link">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eric-fidalgo/"
+            class="social-link"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eric-fidalgo/details/featured/"
+            class="social-link"
+            target="_blank"
+          >
+            <i class="fa-solid fa-file-lines"></i>
+          </a>
         </div>
+        <p>&copy; 2025 Eric Fidalgo. All Rights Reserved.</p>
+      </div>
     </footer>
 
     <script src="js/project_script.js"></script>
-</body>
+  </body>
 </html>

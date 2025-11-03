@@ -62,7 +62,6 @@
 
       <div class="slideshow-container">
         <div class="slides-wrapper">
-
           <div class="slide">
             <div class="video-container" id="videoContainer">
               <img
@@ -73,14 +72,13 @@
               <div class="play-button"></div>
             </div>
           </div>
-
-        </div> <button class="prev" onclick="changeSlide(-1)">❮</button>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
         <button class="next" onclick="changeSlide(1)">❯</button>
 
         <div class="dots">
           <span class="dot active" onclick="currentSlide(1)"></span>
         </div>
-        
       </div>
       <section class="project-section">
         <h2>The Solution</h2>
@@ -110,8 +108,30 @@
       </section>
 
       <section class="project-section download-section">
-        <h2>Download Project</h2>
-        <a href="./downloads/stack.zip" class="btn btn-primary">Download ZIP</a>
+        <h2>Project Files</h2>
+        <div class="download-buttons">
+          <a
+            href="https://github.com/EricFidalgo/InfixToPostfix/archive/refs/heads/main.zip"
+            class="btn btn-primary"
+            download
+            >Download ZIP</a
+          >
+          <a
+            href="https://github.com/EricFidalgo/InfixToPostfix"
+            class="btn btn-secondary"
+            target="_blank"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="clone-section">
+          <p>Or clone the repository:</p>
+          <div class="clone-command-container">
+            <pre><code>git clone https://github.com/EricFidalgo/InfixToPostfix.git</code></pre>
+            <button class="copy-btn" title="Copy to clipboard">
+              <i class="far fa-copy"></i>
+            </button>
+          </div>
+        </div>
       </section>
     </main>
 

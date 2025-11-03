@@ -1,122 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>House Price Prediction Model - Eric Fidalgo</title>
     <link rel="icon" type="image/x-icon" href="../images/logo.ico" />
     <link rel="stylesheet" href="css/project_style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="container">
-            <a href="../index.html" class="nav-logo">Eric Fidalgo</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+      <div class="container">
+        <a href="../index.html" class="nav-logo">Eric Fidalgo</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#skills" class="nav-link">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
+      </div>
     </nav>
 
     <header class="project-header">
-        <div class="container">
-            <h1>House Price Prediction Model</h1>
-            <p class="project-meta">Completed: January 2025</p>
-        </div>
+      <div class="container">
+        <h1>House Price Prediction Model</h1>
+        <p class="project-meta">Completed: January 2025</p>
+      </div>
     </header>
 
     <main class="project-content container">
-        <section class="project-section">
-            <h2>The Problem</h2>
-            <p>Real estate pricing is influenced by multiple variables, making it difficult to estimate home values accurately. Manual analysis of large datasets can be inefficient and prone to inaccuracies which brings problems to the buyers, sellers, and investors.</p>
-        </section>
+      <section class="project-section">
+        <h2>The Problem</h2>
+        <p>
+          Real estate pricing is influenced by multiple variables, making it
+          difficult to estimate home values accurately. Manual analysis of large
+          datasets can be inefficient and prone to inaccuracies which brings
+          problems to the buyers, sellers, and investors.
+        </p>
+      </section>
 
-        <div class="slideshow-container">
-            <div class="slides-wrapper">
-              
-              <div class="slide">
-                <img src="./images/database.png" alt="Database Schema">
-              </div>
-    
-              <div class="slide">
-                <img src="./images/populations.png" alt="Population Visualization">
-              </div>
+      <div class="slideshow-container">
+        <div class="slides-wrapper">
+          <div class="slide">
+            <img src="./images/database.png" alt="Database Schema" />
+          </div>
 
-              <div class="slide">
-                <img src="./images/boxes.png" alt="Box Plot Visualization">
-              </div>
+          <div class="slide">
+            <img
+              src="./images/populations.png"
+              alt="Population Visualization"
+            />
+          </div>
 
-              <div class="slide">
-                <img src="./images/boxes_populations.png" alt="Box Plot with Population">
-              </div>
+          <div class="slide">
+            <img src="./images/boxes.png" alt="Box Plot Visualization" />
+          </div>
 
-            </div> <button class="prev" onclick="changeSlide(-1)">❮</button>
-            <button class="next" onclick="changeSlide(1)">❯</button>
-    
-            <div class="dots">
-              <span class="dot active" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-              <span class="dot" onclick="currentSlide(4)"></span>
-            </div>
-            
+          <div class="slide">
+            <img
+              src="./images/boxes_populations.png"
+              alt="Box Plot with Population"
+            />
+          </div>
         </div>
-        
-        <section class="project-section">
-            <h2>The Solution</h2>
-            <p>Built a machine learning model using Pandas, Seaborn, and scikit-learn, leveraging a Random Forest Regressor to predict median house prices across 20,000+ districts in California. The model was trained on extensive data preprocessing, including feature selection and visualization, which improved accuracy by 15%. To enhance accessibility, the dataset was uploaded to an SQL database using XAAMP, allowing users to efficiently search for properties based on location and price.</p>
-        </section>
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
 
-        <section class="project-section">
-            <h2>The Impact</h2>
-            <p>The model achieved an error mean of $32,000 across all test data, providing reliable price predictions. The SQL database implementation optimized query performance, resulting in 50% faster lookups compared to traditional CSV-based searches, improving the efficiency of property analysis.</p>
-        </section>
+        <div class="dots">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+      </div>
 
-        <section class="project-section">
-            <h2>Tools Used</h2>
-            <ul class="tool-list">
-                <li>Python</li>
-                <li>Machine Learning</li>
-                <li>MySQL</li>
-                <li>XAAMP</li>
-            </ul>
-        </section>
+      <section class="project-section">
+        <h2>The Solution</h2>
+        <p>
+          Built a machine learning model using Pandas, Seaborn, and
+          scikit-learn, leveraging a Random Forest Regressor to predict median
+          house prices across 20,000+ districts in California. The model was
+          trained on extensive data preprocessing, including feature selection
+          and visualization, which improved accuracy by 15%. To enhance
+          accessibility, the dataset was uploaded to an SQL database using
+          XAAMP, allowing users to efficiently search for properties based on
+          location and price.
+        </p>
+      </section>
 
-        <section class="project-section download-section">
-            <h2>Download Project</h2>
-            <a href="./downloads/ML_SQL.zip" class="btn btn-primary">Download ZIP</a>
-        </section>
+      <section class="project-section">
+        <h2>The Impact</h2>
+        <p>
+          The model achieved an error mean of $32,000 across all test data,
+          providing reliable price predictions. The SQL database implementation
+          optimized query performance, resulting in 50% faster lookups compared
+          to traditional CSV-based searches, improving the efficiency of
+          property analysis.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Tools Used</h2>
+        <ul class="tool-list">
+          <li>Python</li>
+          <li>Machine Learning</li>
+          <li>MySQL</li>
+          <li>XAAMP</li>
+        </ul>
+      </section>
+
+      <section class="project-section download-section">
+        <h2>Project Files</h2>
+        <div class="download-buttons">
+          <a
+            href="https://github.com/EricFidalgo/CaliforniaHousingSearch/archive/refs/heads/main.zip"
+            class="btn btn-primary"
+            download
+            >Download ZIP</a
+          >
+          <a
+            href="https://github.com/EricFidalgo/CaliforniaHousingSearch.git"
+            class="btn btn-secondary"
+            target="_blank"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="clone-section">
+          <p>Or clone the repository:</p>
+          <div class="clone-command-container">
+            <pre><code>git clone https://github.com/EricFidalgo/CaliforniaHousingSearch.git</code></pre>
+            <button class="copy-btn" title="Copy to clipboard">
+              <i class="far fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer id="contact" class="footer">
-        <div class="container">
-            <h2>Contact</h2>
-            <div class="social-links">
-                <a href="mailto:ericfidalgo.cs@fsu.edu" class="social-link">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/eric-fidalgo/" class="social-link" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/eric-fidalgo/details/featured/" class="social-link" target="_blank">
-                    <i class="fa-solid fa-file-lines"></i>
-                </a>
-            </div>
-            <p>&copy; 2025 Eric Fidalgo. All Rights Reserved.</p>
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="social-links">
+          <a href="mailto:ericfidalgo.cs@fsu.edu" class="social-link">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eric-fidalgo/"
+            class="social-link"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eric-fidalgo/details/featured/"
+            class="social-link"
+            target="_blank"
+          >
+            <i class="fa-solid fa-file-lines"></i>
+          </a>
         </div>
+        <p>&copy; 2025 Eric Fidalgo. All Rights Reserved.</p>
+      </div>
     </footer>
 
     <script src="js/project_script.js"></script>
-</body>
+  </body>
 </html>
