@@ -1,137 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eric Fidalgo - Portfolio</title>
     <link rel="icon" type="image/x-icon" href="./images/logo.ico" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="container">
-            <a href="#home" class="nav-logo">Eric Fidalgo</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+      <div class="container">
+        <a href="#home" class="nav-logo">Eric Fidalgo</a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
+      </div>
     </nav>
 
     <header id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Eric Fidalgo</h1>
-                <p>Data Scientist | Software Engineer</p>
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-            </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Eric Fidalgo</h1>
+          <p>Data Scientist | Software Engineer</p>
+          <a href="#projects" class="btn btn-primary">View My Work</a>
         </div>
+      </div>
     </header>
 
     <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Computer Science major at Florida State University with a minor in Mathematics. 
-                        Passionate about backend development, data science, AI, and cloud computing. 
-                        Experienced in C++, Python, AWS, and Google Cloud Platform. Currently expanding 
-                        my knowledge in data science and machine learning. Notably, I sold a python LLC 
-                        scraping tool to a wholesale real estate professional and I am currently working 
-                        part-time for <a href="https://ybvr.com/">YBVR</a>.
-                    </p>
-                </div>
-                <div class="about-education">
-                    <h3>Education</h3>
-                    <p><strong>Florida State University</strong></p>
-                    <p>B.S. in Computer Science, Minor in Mathematics</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Computer Science major at Florida State University with a minor in
+              Mathematics. Passionate about backend development, data science,
+              AI, and cloud computing. Experienced in C++, Python, AWS, and
+              Google Cloud Platform. Currently expanding my knowledge in data
+              science and machine learning. Notably, I sold a python LLC
+              scraping tool to a wholesale real estate professional and I am
+              currently working part-time for
+              <a href="https://ybvr.com/">YBVR</a>.
+            </p>
+          </div>
+          <div class="about-education">
+            <h3>Education</h3>
+            <p><strong>Florida State University</strong></p>
+            <p>B.S. in Computer Science, Minor in Mathematics</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="sort-buttons">
-                <button id="sort-preference" class="active">Sort by Preference</button>
-                <button id="sort-date">Sort by Date</button>
-            </div>
-            <div class="projects-grid">
-                </div>
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="sort-buttons">
+          <button id="sort-preference" class="active">
+            Sort by Preference
+          </button>
+          <button id="sort-date">Sort by Date</button>
         </div>
+        <div class="projects-grid"></div>
+      </div>
     </section>
 
     <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>C++</li>
-                        <li>Python</li>
-                        <li>MySQL</li>
-                        <li>HTML/CSS</li>
-                        <li>Java</li>
-                        <li>C#</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Platforms</h3>
-                    <ul>
-                        <li>Linux</li>
-                        <li>AWS</li>
-                        <li>Google Cloud Platform</li>
-                        <li>Linode</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>GitLab</li>
-                        <li>Docker</li>
-                        <li>JIRA</li>
-                        <li>Elastic (Kibana)</li>
-                        <li>VMWare</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Languages</h3>
+            <ul>
+              <li>C++</li>
+              <li>Python</li>
+              <li>MySQL</li>
+              <li>HTML/CSS</li>
+              <li>Java</li>
+              <li>C#</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Platforms</h3>
+            <ul>
+              <li>Linux</li>
+              <li>AWS</li>
+              <li>Google Cloud Platform</li>
+              <li>Linode</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Tools</h3>
+            <ul>
+              <li>Git</li>
+              <li>GitLab</li>
+              <li>Docker</li>
+              <li>JIRA</li>
+              <li>Elastic (Kibana)</li>
+              <li>VMWare</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer id="contact" class="footer">
-        <div class="container">
-            <h2>Contact</h2>
-            <div class="social-links">
-                <a href="mailto:ericfidalgo.cs@fsu.edu" class="social-link">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/eric-fidalgo/" class="social-link" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/eric-fidalgo/details/featured/" class="social-link" target="_blank">
-                    <i class="fa-solid fa-file-lines"></i>
-                </a>
-            </div>
-            <p>&copy; 2025 Eric Fidalgo. All Rights Reserved.</p>
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="social-links">
+          <a href="mailto:ericfidalgo.cs@fsu.edu" class="social-link">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eric-fidalgo/"
+            class="social-link"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eric-fidalgo/details/featured/"
+            class="social-link"
+            target="_blank"
+          >
+            <i class="fa-solid fa-file-lines"></i>
+          </a>
         </div>
+        <p>&copy; 2025 Eric Fidalgo. All Rights Reserved.</p>
+      </div>
     </footer>
 
-    <script src="projects.js"></script>
+    <script src="projects/js/projects-data.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

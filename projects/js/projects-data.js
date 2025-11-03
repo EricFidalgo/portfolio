@@ -2,6 +2,10 @@ const projectsData = {
   "ybvr-internship": {
     title: "Data Science at YBVR",
     meta: "Internship: May 2025 – July 2025 | Part-Time: September 2025 - Current",
+    date: "2025-09-01",
+    description:
+      "Designed a user analytics system, creating Kibana dashboards and scaling a BigQuery database to track engagement for a VR application.",
+    preference: 1,
     contentBlocks: [
       {
         type: "section",
@@ -64,6 +68,10 @@ const projectsData = {
   "infix-to-postfix": {
     title: "Custom Stack Library for Infix-to-Postfix Conversion",
     meta: "Completed: September 2024",
+    date: "2024-09-15",
+    description:
+      "Implemented a custom stack class with templates for infix-to-postfix conversion.",
+    preference: 8,
     contentBlocks: [
       {
         type: "section",
@@ -94,6 +102,10 @@ const projectsData = {
   "binary-expression-tree": {
     title: "Custom Tree Library for Postfix-to-Infix Conversion",
     meta: "Completed: October 2024",
+    date: "2024-10-15",
+    description:
+      "Learned binary tree creation, traversal, and postfix-to-infix conversion.",
+    preference: 7,
     contentBlocks: [
       {
         type: "section",
@@ -124,6 +136,9 @@ const projectsData = {
   "real-estate-mls": {
     title: "Real Estate Agent & Property Listings Website",
     meta: "Completed: November 2024",
+    date: "2024-09-30",
+    description: "Built a dynamic website using PHP with a MySQL backend.",
+    preference: 9,
     contentBlocks: [
       {
         type: "section",
@@ -175,6 +190,10 @@ const projectsData = {
   "house-price-prediction-model": {
     title: "House Price Prediction Model",
     meta: "Completed: January 2025",
+    date: "2025-01-01",
+    description:
+      "A machine learning tool used to predict house prices with an SQL database.",
+    preference: 3,
     contentBlocks: [
       {
         type: "section",
@@ -226,6 +245,10 @@ const projectsData = {
   "course-content-creator": {
     title: "Course Content Creator",
     meta: "Completed: November 2023",
+    date: "2023-11-05",
+    description:
+      "Learned aggregation principles and implemented operator overloading with pointer-based objects.",
+    preference: 11,
     contentBlocks: [
       {
         type: "section",
@@ -256,6 +279,10 @@ const projectsData = {
   "account-balance-updater": {
     title: "Account Balance Updater",
     meta: "Completed: April 2023",
+    date: "2024-04-10",
+    description:
+      "Learned how to use data structures and hashmaps to update peoples information.",
+    preference: 10,
     contentBlocks: [
       {
         type: "section",
@@ -286,6 +313,10 @@ const projectsData = {
   "employee-api-service": {
     title: "Employee Management RESTful API",
     meta: "Completed: October 2025",
+    date: "2025-10-01",
+    description:
+      "A Java Spring Boot application that creates a secure REST API to expose and manage employee data, serving as an intermediary between a legacy internal system and a new third-party SaaS platform.",
+    preference: 4,
     contentBlocks: [
       {
         type: "section",
@@ -347,6 +378,10 @@ const projectsData = {
   "llc-web-scraper": {
     title: "Florida Biz Scraper",
     meta: "Completed: July 2024",
+    date: "2024-08-01",
+    description:
+      "A web scraping app used to automate LLC data extraction based on client requirements.",
+    preference: 2,
     contentBlocks: [
       {
         type: "section",
@@ -396,6 +431,10 @@ const projectsData = {
   "monoalphabetic-cipher-decryptor": {
     title: "Mono-Alphabetic Cipher Decryption",
     meta: "Completed: February 2025",
+    date: "2025-02-05",
+    description:
+      "Decrypted a message that was encrypted using a mono-alphabetic key.",
+    preference: 6,
     contentBlocks: [
       {
         type: "section",
@@ -437,6 +476,10 @@ const projectsData = {
   "password-server": {
     title: "Local Database with Hash Maps and Encryption",
     meta: "Completed: November 2024",
+    date: "2024-11-15",
+    description:
+      "Created a database using hash maps that deals with file inputs and text input with password encryption.",
+    preference: 5,
     contentBlocks: [
       {
         type: "section",
@@ -467,6 +510,10 @@ const projectsData = {
   "simple-chess-simulator": {
     title: "Chess Game",
     meta: "Completed: September 2023",
+    date: "2023-09-15",
+    description:
+      "Learned how to use classes and how to implement getter and setter functions for object outputs.",
+    preference: 12,
     contentBlocks: [
       {
         type: "section",

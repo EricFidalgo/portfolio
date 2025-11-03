@@ -22,6 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const sortPreferenceBtn = document.getElementById("sort-preference");
   const sortDateBtn = document.getElementById("sort-date");
 
+  // Convert the projectsData object into an array for sorting and iteration
+  // and add the 'link' property for the main page display.
+  const projectsArray = Object.entries(projectsData).map(([id, project]) => ({
+    id,
+    link: `./projects/project.html?id=${id}`,
+    // Join the 'tools' array into a comma-separated string for display on the main page
+    technologies: project.tools ? project.tools.join(", ") : "", // Renamed from 'technologies' to 'tools' for consistency
+    ...project, // Spread the rest of the project properties (title, description, date, preference, etc.)
+  }));
+
   /**
    * Renders the projects into the projects-grid container.
    * @param {string} sortCriteria - The criteria to sort projects by ('preference' or 'date').
@@ -31,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     projectsGrid.innerHTML = "";
 
     // Create a sorted copy of the projects array based on the sort criteria.
-    const sortedProjects = [...projects].sort((a, b) => {
+    const sortedProjects = [...projectsArray].sort((a, b) => {
       if (sortCriteria === "preference") {
         // Sort by preference number in ascending order.
         return a.preference - b.preference;
@@ -49,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="project-card-content">
                     <h3>${project.title}</h3>
                     <p>${project.description}</p>
-                    <p class="technologies"><strong>Technologies:</strong> ${project.technologies}</p>
+                    <p class="technologies"><strong>Tools:</strong> ${project.technologies}</p>
                     <a href="${project.link}" class="btn btn-primary project-link">View Project</a>
                 </div>
             `;
