@@ -1,3 +1,4 @@
+/* main.js */ 
 document.addEventListener("DOMContentLoaded", () => {
   // --- Navbar Hamburger Logic ---
   const hamburger = document.querySelector(".hamburger");
@@ -27,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectsArray = Object.entries(projectsData).map(([id, project]) => ({
     id,
     link: `./projects/project.html?id=${id}`,
-    // Join the 'tools' array into a comma-separated string for display on the main page
-    technologies: project.tools ? project.tools.join(", ") : "", // Renamed from 'technologies' to 'tools' for consistency
+    // Join the 'tools' array with a pipe separator
+    technologies: project.tools ? project.tools.join(" · ") : "",
     ...project, // Spread the rest of the project properties (title, description, date, preference, etc.)
   }));
 
@@ -72,7 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
       projectCard.classList.add("project-card");
       projectCard.innerHTML = `
         <div class="project-card-content">
-            <p class="project-card-date">${formatDate(project.date)}</p>
+            <p class="project-card-date">${
+              project.displayDate
+                ? project.displayDate
+                : formatDate(project.date)
+            }</p>
             <h3>${project.title}</h3>
             <p class="project-card-description">${project.description}</p>
             <p class="technologies">${project.technologies}</p>
@@ -101,3 +106,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial render of projects, sorted by preference.
   renderProjects("preference");
 });
+
+

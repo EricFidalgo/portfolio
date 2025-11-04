@@ -1,8 +1,10 @@
+/* project-data.js */
 const projectsData = {
   "ybvr-internship": {
     title: "Data Science at YBVR",
     meta: "Internship: May 2025 – July 2025 | Part-Time: September 2025 - Current",
-    date: "2025-09-01",
+    date: "2025-10-03",
+    displayDate: "May 2025 – Present",
     description:
       "Designed a user analytics system, creating Kibana dashboards and scaling a BigQuery database to track engagement for a VR application.",
     preference: 1,

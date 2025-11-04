@@ -1,3 +1,4 @@
+/* shared.css */ 
 :root {
   --primary-color: #6e8efb;
   --secondary-color: #a777e3;
@@ -6,6 +7,7 @@
   --text-color: #ffffff;
   --text-secondary-color: #a0a0a0;
   --font-family: "Roboto", sans-serif;
+  --heading-font: "Zalando Sans SemiExpanded", sans-serif;
 }
 
 * {
@@ -94,16 +96,22 @@ body {
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 0.8rem 2rem;
+  padding: 1rem 2.5rem;
   border-radius: 5px;
   text-decoration: none;
   font-weight: 700;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Changed */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+  font-family: var(--heading-font); 
+  text-transform: uppercase; 
+  letter-spacing: 1.5px; 
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
+  border: none;
 }
 
 .btn:hover {
-  transform: translateY(-2px); /* Add a slight lift to buttons */
+  transform: translateY(-3px); 
   background: var(--secondary-color);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); 
 }
 
 .btn-primary {
