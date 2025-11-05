@@ -131,7 +131,25 @@ section h2::after {
 
 .about-recognition li {
   color: var(--text-secondary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.about-recognition li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px; /* Adjust for vertical alignment */
+  width: 5px;
+  height: 5px;
+  background-color: var(--primary-color);
+}
+
+.achievement-title {
+  display: block;
+  font-weight: 700;
+  color: var(--text-color);
 }
 /* Projects Section */
 .sort-buttons {
