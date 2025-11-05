@@ -1,7 +1,6 @@
 /* shared.css */ 
 :root {
   --primary-color: #6e8efb;
-  --secondary-color: #ff6b6b;
   --background-color: #121212;
   --surface-color: #1e1e1e;
   --text-color: #ffffff;
@@ -67,6 +66,7 @@ body {
 }
 
 .nav-logo {
+  font-family: var(--heading-font);
   color: var(--text-color);
   text-decoration: none;
   font-size: 1.5rem;
@@ -83,6 +83,7 @@ body {
 }
 
 .nav-link {
+  font-family: var(--heading-font);
   color: var(--text-secondary-color);
   text-decoration: none;
   font-size: 1rem;
@@ -125,7 +126,7 @@ body {
 
 .btn:hover {
   transform: translateY(-3px); 
-  background: var(--secondary-color);
+  background: var(--primary-color);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); 
 }
 

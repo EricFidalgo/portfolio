@@ -322,7 +322,7 @@
 }
 
 .download-btn:hover {
-  background-color: var(--secondary-color); /* Use secondary color */
+  background-color: var(--primary-color); /* Use secondary color */
 }
 
 .download-buttons {
