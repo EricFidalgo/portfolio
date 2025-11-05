@@ -417,7 +417,7 @@ const projectsData = {
         type: "section",
         title: "The Impact",
         content:
-          "The tool significantly reduced manual workload, increasing data retrieval efficiency by automating an otherwise tedious process. Furthermore, the project laid the groundwork for a scalable business model by establishing <b>https://floridabizscraper.com</b> <i>(inactive)</i>,  with future subscription-based revenue capabilities.",
+          'The tool significantly reduced manual workload, increasing data retrieval efficiency by automating an otherwise tedious process. Furthermore, the project laid the groundwork for a scalable business model by establishing <a href="#" onclick="return false;"><b>https://floridabizscraper.com</b></a> <i>(inactive)</i>, with future subscription-based revenue capabilities.',
       },
       {
         type: "section",

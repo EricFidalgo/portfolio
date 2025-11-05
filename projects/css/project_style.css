@@ -1,10 +1,14 @@
 /* Project Header */
 .project-header {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 30, 0.5) 0%,
+    var(--background-color) 100%
+  );
   padding-top: 120px;
   padding-bottom: 3rem;
   text-align: center;
 }
-
 .project-header h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
@@ -32,6 +36,7 @@
 }
 
 .project-section h2 {
+  font-family: var(--heading-font);
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
@@ -43,6 +48,19 @@
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
   line-height: 1.7;
+}
+
+/* NEW: Styling for inline links within project content */
+.project-section p a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--primary-color);
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.project-section p a:hover {
+  color: var(--text-color);
+  border-bottom-color: var(--text-color);
 }
 
 .project-section ul {
@@ -63,7 +81,7 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 11px; /* Adjust for vertical alignment */
+  top: 0.7em; /* Use em for better vertical alignment */
   width: 5px;
   height: 5px;
   background-color: var(--primary-color);
@@ -105,6 +123,12 @@
   transition: all 0.2s ease;
   margin: 0; /* Override default li margin */
   padding-left: 14px; /* Override default li padding */
+}
+.tool-list li:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .tool-list li::before {
@@ -240,10 +264,12 @@
 .prev {
   left: 0;
   border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px; /* Corrected from next */
 }
 .next {
   right: 0;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .prev:hover,
@@ -275,74 +301,6 @@
   background-color: white;
 }
 
-/* Project Details */
-.project-details {
-  background: var(--surface-color); /* Dark mode */
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
-}
-
-.project-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--text-color); /* Dark mode */
-}
-
-.project-subtitle {
-  font-size: 1.2rem;
-  color: var(--text-secondary-color); /* Dark mode */
-  margin-bottom: 2rem;
-}
-
-.project-description {
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.project-description ul {
-  list-style-position: outside;
-  padding-left: 40px;
-  margin-top: 1rem;
-}
-
-.deeper-look-title {
-  font-size: 1.5rem;
-  color: var(--text-color); /* Dark mode */
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #333; /* Dark mode */
-}
-
-.project-metadata {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.metadata-item {
-  background: #333; /* Dark mode */
-  padding: 1rem;
-  border-radius: 5px;
-}
-
-.metadata-item h3 {
-  font-size: 1.1rem;
-  color: var(--text-color); /* Dark mode */
-  margin-bottom: 0.5rem;
-}
-
-.metadata-item ul {
-  list-style: none;
-}
-
-.metadata-item li {
-  margin: 0.3rem 0;
-  color: var(--text-secondary-color); /* Dark mode */
-}
-
 .download-section {
   text-align: center;
   margin-top: 2rem;
@@ -351,20 +309,11 @@
   border-radius: 10px;
 }
 
-.download-btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: var(--primary-color); /* Use primary color */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  transition: background-color 0.3s;
-}
-
-.download-btn:hover {
-  background-color: var(--primary-color); /* Use secondary color */
-}
+/*
+  The .btn and .btn-primary styles are defined in shared.css
+  and applied via JS, so .download-btn is not needed here.
+  The a tags inside .download-buttons use .btn.
+*/
 
 .download-buttons {
   display: flex;
@@ -374,7 +323,10 @@
 }
 
 .clone-section {
+  max-width: 600px; /* Constrain width for better layout */
   margin-top: 2rem;
+  margin-left: auto; /* Center the section */
+  margin-right: auto; /* Center the section */
 }
 
 .clone-section pre {
@@ -429,10 +381,6 @@
 @media (max-width: 768px) {
   .project-container {
     padding: 5rem 1rem 1rem;
-  }
-
-  .project-title {
-    font-size: 2rem;
   }
 
   .prev,
