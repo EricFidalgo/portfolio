@@ -6,14 +6,14 @@ const projectsData = {
     date: "2025-10-03",
     displayDate: "May 2025 – Present",
     description:
-      "Designed a user analytics system, creating Kibana dashboards and scaling a BigQuery database to track engagement for a VR application.",
+      "Designed a user analytics system, creating Kibana dashboards and scaling a BigQuery database to track engagement for their VR Applications.",
     preference: 1,
     contentBlocks: [
       {
         type: "section",
         title: "The Challenge",
         content:
-          "The user tracking system for the Xtadium application was missing many different metrics to track user engagement data. This limited the company's ability to look deeper into user behavior and engagement, which hindered decisions for product development and stakeholder reporting.",
+          "The user tracking system for their Xtadium and CultVRe applications were missing many different metrics to track user engagement data. This limited the company's ability to look deeper into user behavior and engagement, which hindered decisions for product development and stakeholder reporting.",
       },
       {
         type: "slideshow",
@@ -68,11 +68,11 @@ const projectsData = {
     repoName: null, // No repo for this one
   },
   "infix-to-postfix": {
-    title: "Custom Stack Library for Infix-to-Postfix Conversion",
+    title: "Infix to Postfix Expression Converter",
     meta: "Completed: September 2024",
     date: "2024-09-15",
     description:
-      "Implemented a custom stack class with templates for infix-to-postfix conversion.",
+      "Built a C++ converter for mathematical expressions using a custom stack implementation, demonstrating core data structure principles.",
     preference: 8,
     contentBlocks: [
       {
@@ -102,11 +102,11 @@ const projectsData = {
     repoName: "InfixToPostfix",
   },
   "binary-expression-tree": {
-    title: "Custom Tree Library for Postfix-to-Infix Conversion",
+    title: "Binary Expression Tree for Postfix Evaluation",
     meta: "Completed: October 2024",
     date: "2024-10-15",
     description:
-      "Learned binary tree creation, traversal, and postfix-to-infix conversion.",
+      "Implemented a binary expression tree in C++ to parse postfix expressions and convert them back to their original infix format.",
     preference: 7,
     contentBlocks: [
       {
@@ -139,7 +139,8 @@ const projectsData = {
     title: "Real Estate Agent & Property Listings Website",
     meta: "Completed: November 2024",
     date: "2024-09-30",
-    description: "Built a dynamic website using PHP with a MySQL backend.",
+    description:
+      "Developed a full-stack real estate listings website with PHP and MySQL, enabling users to search for properties and view agent information.",
     preference: 9,
     contentBlocks: [
       {
@@ -194,7 +195,7 @@ const projectsData = {
     meta: "Completed: January 2025",
     date: "2025-01-01",
     description:
-      "A machine learning tool used to predict house prices with an SQL database.",
+      "Developed a machine learning model using Python and scikit-learn to predict California house prices with a high degree of accuracy.",
     preference: 3,
     contentBlocks: [
       {
@@ -238,7 +239,7 @@ const projectsData = {
         type: "section",
         title: "The Impact",
         content:
-          "The model achieved an error mean of $32,000 across all test data, providing reliable price predictions. The SQL database implementation optimized query performance, resulting in 50% faster lookups compared to traditional CSV-based searches, improving the efficiency of property analysis.",
+          "The model achieved a mean absolute error (MAE) of $32,000 across all test data, providing reliable price predictions. The SQL database implementation optimized query performance, resulting in 50% faster lookups compared to traditional CSV-based searches, improving the efficiency of property analysis.",
       },
     ],
     tools: ["Python", "Machine Learning", "MySQL", "XAAMP"],
@@ -249,7 +250,7 @@ const projectsData = {
     meta: "Completed: November 2023",
     date: "2023-11-05",
     description:
-      "Learned aggregation principles and implemented operator overloading with pointer-based objects.",
+      "Applied C++ OOP principles, including aggregation and operator overloading, to build a system for managing course content.",
     preference: 11,
     contentBlocks: [
       {
@@ -283,7 +284,7 @@ const projectsData = {
     meta: "Completed: April 2023",
     date: "2024-04-10",
     description:
-      "Learned how to use data structures and hashmaps to update peoples information.",
+      "Engineered a Java application that uses hash maps to efficiently process and update user account data from text files.",
     preference: 10,
     contentBlocks: [
       {
@@ -317,14 +318,14 @@ const projectsData = {
     meta: "Completed: October 2025",
     date: "2025-10-01",
     description:
-      "A Java Spring Boot application that creates a secure REST API to expose and manage employee data, serving as an intermediary between a legacy internal system and a new third-party SaaS platform.",
+      "Built a secure REST API with Spring Boot to bridge a hypothetical legacy system with a modern SaaS platform, enabling seamless data integration.",
     preference: 4,
     contentBlocks: [
       {
         type: "section",
         title: "The Challenge",
         content:
-          'The company has an existing employee management system that is deeply integrated with other services, making it impossible to replace immediately. However, they have purchased a new SaaS platform, "Employees-R-US," and need a way for it to interact with the current employee data.',
+          "This project addresses a common integration challenge: how to connect a modern third-party SaaS platform with a company's legacy system without a full-scale migration. The goal was to build a program that allows the two systems to communicate securely and efficiently.",
       },
       {
         type: "slideshow",
@@ -371,7 +372,7 @@ const projectsData = {
         type: "section",
         title: "The Impact",
         content:
-          'This API allows the new "Employees-R-US" platform to consume and manage employee data from the company\'s existing system without requiring a disruptive, large-scale migration. It effectively decouples the new SaaS platform from the legacy system, enabling a smoother, more gradual transition while allowing the company to begin leveraging its new software investment immediately.',
+          "The resulting API successfully decouples the new SaaS platform from the legacy system. It provides a secure and scalable bridge that allows an organization to adopt modern tools without the cost and risk of a disruptive migration, demonstrating a practical approach to enterprise software integration.",
       },
     ],
     tools: ["Java", "SpringBoot", "PostMan", "Gradle"],
@@ -382,14 +383,14 @@ const projectsData = {
     meta: "Completed: July 2024",
     date: "2024-08-01",
     description:
-      "A web scraping app used to automate LLC data extraction based on client requirements.",
+      "Developed and sold a Python web scraping tool that automates LLC data extraction for a real estate client, secured with AWS.",
     preference: 2,
     contentBlocks: [
       {
         type: "section",
         title: "The Challenge",
         content:
-          "Real estate wholesalers and business researchers often rely on Florida’s LLC database for ownership details, addresses, and associated records. However, manually retrieving and organizing this data is time-consuming and inefficient, limiting productivity and scalability.",
+          "A real estate wholesaler identified a major inefficiency in their workflow: manually retrieving and organizing LLC data from Florida's public database was time-consuming and limited their ability to scale operations. They needed an automated solution to streamline data collection for lead generation.",
       },
       {
         type: "slideshow",
@@ -411,7 +412,7 @@ const projectsData = {
         type: "section",
         title: "The Solution",
         content:
-          'Developed a Python-based web scraping application that automates the extraction of LLC ownership data from <a href="https://sunbiz.org" target="_blank"> Sunbiz.org. </a> The software processes over 100 companies per minute, converting the extracted information into a structured, modern Excel file. Additionally, security enhancements were implemented, including a Two-Factor Authentication (2FA) system using Amazon WorkMail and URL extension removal via AWS Lambda to ensure data integrity and platform security.',
+          'In collaboration with the real estate wholesaler, I developed a Python-based web scraping application that automates the extraction of LLC ownership data from <a href="https://sunbiz.org" target="_blank">Sunbiz.org</a>. The software processes over 100 companies per minute, converting the extracted information into a structured Excel file. To meet client security requirements, I implemented a Two-Factor Authentication (2FA) system using Amazon WorkMail and URL extension removal via AWS Lambda to ensure data integrity.',
       },
       {
         type: "section",
@@ -435,7 +436,7 @@ const projectsData = {
     meta: "Completed: February 2025",
     date: "2025-02-05",
     description:
-      "Decrypted a message that was encrypted using a mono-alphabetic key.",
+      "Created a C++ program to decrypt mono-alphabetic ciphers by implementing letter frequency analysis and dictionary mapping.",
     preference: 6,
     contentBlocks: [
       {
@@ -480,7 +481,7 @@ const projectsData = {
     meta: "Completed: November 2024",
     date: "2024-11-15",
     description:
-      "Created a database using hash maps that deals with file inputs and text input with password encryption.",
+      "Built a secure user authentication system in C++ featuring a custom hash table and Argon2id password encryption via libsodium.",
     preference: 5,
     contentBlocks: [
       {
@@ -514,7 +515,7 @@ const projectsData = {
     meta: "Completed: September 2023",
     date: "2023-09-15",
     description:
-      "Learned how to use classes and how to implement getter and setter functions for object outputs.",
+      "Developed a simple chess simulator in C++ to demonstrate object-oriented programming, encapsulation, and class-based design.",
     preference: 12,
     contentBlocks: [
       {
