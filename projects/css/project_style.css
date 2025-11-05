@@ -334,15 +334,20 @@
   padding: 1rem;
   border-radius: 5px;
   border: 1px solid #444;
-  overflow-x: auto;
   text-align: left; /* Keep this for the text inside */
   flex-grow: 1; /* Allow pre to grow */
   margin: 0; /* Remove default margins */
+
+  overflow: hidden;
 }
 
 .clone-section pre code {
   font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
   font-size: 0.95rem;
+  display: block; /* Make it a block to apply truncation */
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /
 }
 
 .clone-command-container {
