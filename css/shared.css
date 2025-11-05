@@ -1,13 +1,28 @@
 /* shared.css */ 
 :root {
   --primary-color: #6e8efb;
-  --secondary-color: #a777e3;
+  --secondary-color: #ff6b6b;
   --background-color: #121212;
   --surface-color: #1e1e1e;
   --text-color: #ffffff;
   --text-secondary-color: #a0a0a0;
   --font-family: "Roboto", sans-serif;
   --heading-font: "Zalando Sans SemiExpanded", sans-serif;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* For WebKit browsers (Chrome, Safari, new Edge) */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Internet Explorer (legacy) */
+body {
+  -ms-overflow-style: none;
 }
 
 * {

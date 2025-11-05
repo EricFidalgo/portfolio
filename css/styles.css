@@ -27,6 +27,19 @@
   letter-spacing: 0.5px;
 }
 
+.hero .btn-primary {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  transform: translateY(-3px);
+}
+
 /* Sections */
 section {
   padding: 6rem 0;
@@ -34,7 +47,7 @@ section {
 
 section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   margin-bottom: 3rem;
   position: relative;
 }
@@ -124,21 +137,42 @@ section h2::after {
 .sort-buttons {
   text-align: center;
   margin-bottom: 2rem;
+  display: flex; /* Use flexbox for better alignment */
+  justify-content: center; /* Center the buttons */
+  gap: 1rem; /* Add space between buttons */
 }
 
 .sort-buttons button {
   background: none;
   border: 1px solid var(--surface-color);
+  background: transparent; /* Keep transparent background for inactive state */
+  border: 2px solid var(--surface-color); /* Slightly thicker border */
   color: var(--text-secondary-color);
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
   border-radius: 5px;
+  padding: 0.75rem 1.5rem; /* More padding for a better click area */
+  margin: 0; /* Remove margin as gap is used in the container */
+  border-radius: 50px; /* Pill shape */
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: var(--heading-font); /* Consistent font */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, transform 0.3s ease;
 }
 
 .sort-buttons button.active,
 .sort-buttons button:hover {
+  border-color: var(--primary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+}
+
+.sort-buttons button.active {
   background: var(--primary-color);
   color: var(--text-color);
   border-color: var(--primary-color);
