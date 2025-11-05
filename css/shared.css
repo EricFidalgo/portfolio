@@ -186,6 +186,18 @@ body {
   color: var(--primary-color);
 }
 
+.photo-credit {
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 1rem;
+}
+
+.photo-credit a {
+  color: var(--text-secondary-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
 .footer p {
   color: var(--text-secondary-color);
   font-size: 0.9rem;
