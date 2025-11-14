@@ -19,12 +19,18 @@
 }
 
 .hero-content p {
-  font-family: var(--heading-font); /* Use new font */
-  font-size: 1.75rem;
-  font-weight: 400; /* Regular weight for contrast */
+  font-family: var(--heading-font);
+  font-size: 1.25rem; /* Smaller for a more refined look */
+  font-weight: 500; /* A bit bolder than regular */
   color: var(--text-secondary-color);
-  margin-bottom: 2.5rem; /* More space */
-  letter-spacing: 0.5px;
+  margin-bottom: 2.5rem;
+  letter-spacing: 3px; /* More spacing for a modern, airy feel */
+  text-transform: uppercase; /* Professional and clean */
+}
+
+.hero-content .title-separator {
+  color: var(--primary-color); /* Make the separator stand out */
+  font-weight: 700;
 }
 
 .hero .btn-primary {
