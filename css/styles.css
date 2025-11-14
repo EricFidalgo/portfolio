@@ -40,6 +40,11 @@
   transform: translateY(-3px);
 }
 
+/* Hide the mobile-only line break on desktop */
+.hero-content .mobile-break {
+  display: none;
+}
+
 /* Sections */
 section {
   padding: 6rem 0;
@@ -314,6 +319,20 @@ section h2::after {
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem; /* Slightly smaller font for mobile */
+    line-height: 1.4; /* Better spacing when wrapped */
+  }
+
+  .hero-content .title-separator {
+    display: none; /* Hide the separator on smaller screens */
+  }
+
+  /* Show the mobile-only line break */
+  .hero-content .mobile-break {
+    display: block;
   }
 
   .about-content {
