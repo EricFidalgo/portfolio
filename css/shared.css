@@ -209,17 +209,24 @@ body {
     position: fixed;
     left: -100%;
     top: 70px;
-    flex-direction: column;
-    background-color: var(--surface-color);
+    /* Use a semi-transparent background with a blur effect */
+    background-color: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
     width: 100%;
-    text-align: center;
+    height: calc(100vh - 70px); /* Fill the rest of the viewport height */
     transition: 0.3s;
+    /* Use flexbox for better centering of nav items */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .nav-menu.active {
     left: 0;
   }
 
+  /* Increase spacing and font size for better touch targets */
   .nav-item {
     margin: 1.5rem 0;
   }

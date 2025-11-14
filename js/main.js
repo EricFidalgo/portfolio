@@ -1,5 +1,14 @@
-/* main.js */ 
+/* main.js */
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Set Viewport Height CSS Variable ---
+  // This fixes the 100vh issue on mobile browsers where the address bar causes a jump.
+  const setViewportHeight = () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+  setViewportHeight(); // Set it on initial load
+  window.addEventListener("resize", setViewportHeight); // Reset on resize
+
   // --- Navbar Hamburger Logic ---
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
@@ -106,5 +115,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial render of projects, sorted by preference.
   renderProjects("preference");
 });
-
-
