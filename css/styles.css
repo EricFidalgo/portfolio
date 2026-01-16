@@ -405,3 +405,127 @@ section h2::after {
 .skills {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
+
+/* ... existing styles ... */
+
+/* Certifications Section */
+.about-certifications {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  grid-column: 1 / -1;
+}
+
+.about-certifications h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cert-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Card Container */
+.cert-item {
+  display: flex;
+  align-items: center;
+  /* Use a dark gradient to make it look like a premium banner */
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.0) 100%);
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  border-left: 5px solid var(--text-secondary-color);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  gap: 1.5rem; /* Space between logo and text */
+}
+
+.cert-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+/* Completed Cert Border Color */
+.cert-item.completed {
+  border-left-color: #FF9900; /* AWS Orange Border */
+}
+
+/* LOGO STYLES */
+.cert-logo-wrapper {
+  font-size: 2.5rem; /* Make the logo big */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; 
+}
+
+/* Color the icon AWS Orange */
+.cert-item.completed .cert-logo-wrapper i {
+  color: #FF9900; 
+}
+
+/* Greyscale the icon for 'In Progress' until you earn it */
+.cert-item.progress .cert-logo-wrapper i {
+  color: var(--text-secondary-color);
+  opacity: 0.5;
+}
+
+/* Text Info */
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes the button to the right */
+}
+
+.cert-name {
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.cert-meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+}
+
+/* Buttons and Badges */
+.cert-btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+.status-badge {
+  background: #333;
+  color: var(--text-secondary-color);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .cert-item {
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .cert-info {
+    width: 100%;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+  
+  .cert-btn, .status-badge {
+    width: 100%;
+  }
+}

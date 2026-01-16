@@ -1,7 +1,7 @@
 /* project-data.js */
 const projectsData = {
   "ybvr-internship": {
-    title: "Data Science at YBVR",
+    title: "Data Engineering at YBVR",
     meta: "Internship: May 2025 – July 2025 | Part-Time: September 2025 - Current",
     date: "2025-10-03",
     displayDate: "May 2025 – Present",
@@ -34,7 +34,7 @@ const projectsData = {
         type: "section",
         title: "The Solution",
         content:
-          "As a Data Science Intern at YBVR, I redesigned the user tracking system by refactoring the code and creating new metrics to track. I developed the user analytics database on Google Big Query, scaling it to over one million rows for more advanced tracking. I also used Elastic (Kibana) to create dynamic dashboards and dataframes to visualize user engagement patterns which were then compiled into executive reports for the company and stakeholders.",
+          "As a Data Engineering Intern at YBVR, I redesigned the user tracking system by refactoring the code and creating new metrics to track. I developed the user analytics database on Google Big Query, scaling it to over one million rows for more advanced tracking. I also used Elastic (Kibana) to create dynamic dashboards and dataframes to visualize user engagement patterns which were then compiled into executive reports for the company and stakeholders.",
       },
       {
         type: "image",
