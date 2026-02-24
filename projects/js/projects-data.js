@@ -1,71 +1,61 @@
 /* project-data.js */
 const projectsData = {
-  "ybvr-internship": {
-    title: "Data Engineering at YBVR",
-    meta: "Internship: May 2025 – July 2025 | Part-Time: September 2025 - Current",
-    date: "2025-10-03",
-    displayDate: "May 2025 – Present",
-    description:
-      "Designed a user analytics system, creating Kibana dashboards and scaling a BigQuery database to track engagement for their VR Applications.",
-    preference: 1,
-    contentBlocks: [
+"ybvr-internship": {
+    "title": "Data Engineering at YBVR",
+    "meta": "Internship: May 2025 – July 2025 | Part-Time: September 2025 - Current",
+    "date": "2025-10-03",
+    "displayDate": "May 2025 – Present",
+    "description": "Architected a serverless ETL pipeline using Docker and Google Cloud Run to automate user analytics for VR applications, reducing reporting latency from weekly to hourly.",
+    "preference": 1,
+    "contentBlocks": [
       {
-        type: "section",
-        title: "The Challenge",
-        content:
-          "The user tracking system for their Xtadium and CultVRe applications were missing many different metrics to track user engagement data. This limited the company's ability to look deeper into user behavior and engagement, which hindered decisions for product development and stakeholder reporting.",
+        "type": "section",
+        "title": "The Challenge",
+        "content": "The legacy reporting workflow for the Xtadium application relied on a manual process: generating temporary Excel files, copying tables into a master spreadsheet, and manually updating PowerPoint slides. This workflow was error-prone, labor-intensive, and limited stakeholders to weekly updates, making it impossible to react to user behavior in real-time."
       },
       {
-        type: "slideshow",
-        slides: [
+        "type": "slideshow",
+        "slides": [
           {
-            type: "image",
-            src: "./images/xtadium_app.png",
-            alt: "Xtadium Application Screenshot",
+            "type": "image",
+            "src": "./images/xtadium_app.png",
+            "alt": "Xtadium Application Screenshot"
           },
           {
-            type: "image",
-            src: "./images/bigquery_schema.png",
-            alt: "BigQuery Schema",
-          },
-        ],
+            "type": "image",
+            "src": "./images/bigquery_schema.png",
+            "alt": "BigQuery Schema and Cloud Run Architecture"
+          }
+        ]
       },
       {
-        type: "section",
-        title: "The Solution",
-        content:
-          "As a Data Engineering Intern at YBVR, I redesigned the user tracking system by refactoring the code and creating new metrics to track. I developed the user analytics database on Google Big Query, scaling it to over one million rows for more advanced tracking. I also used Elastic (Kibana) to create dynamic dashboards and dataframes to visualize user engagement patterns which were then compiled into executive reports for the company and stakeholders.",
+        "type": "section",
+        "title": "The Solution",
+        "content": "I deprecated the manual Excel workflow by engineering a fully automated, serverless ETL pipeline. I containerized the extraction logic into four distinct Docker images, each responsible for querying specific Elastic metrics and uploading them to dedicated BigQuery tables. These containers are orchestrated via Google Cloud Run and triggered by hourly cron jobs, ensuring continuous data ingestion. To visualize this data, I integrated BigQuery with Looker Studio, enabling dynamic, self-updating dashboards."
       },
       {
-        type: "image",
-        src: "./images/kibana_dashboard.png",
-        alt: "Kibana Dashboard showing user engagement metrics",
+        "type": "image",
+        "src": "./images/looker_dashboard.png",
+        "alt": "Looker Studio Dashboard showing real-time metrics"
       },
       {
-        type: "section",
-        title: "The Impact",
-        content:
-          "The new metrics provided new insights into user engagement, directly informing the product team's strategy. The visualizations and reports are presented weekly to key stakeholders including Meta, NBA, FOX, ESPN, NASCAR, TNT, and UFC, which strengthened business relationships.",
+        "type": "section",
+        "title": "The Impact",
+        "content": "The transition from manual reporting to an automated pipeline reduced data latency from weekly to hourly, providing near real-time insights. We eliminated 100% of human data entry errors and replaced static presentations with live dashboards. These tools are now the primary source of truth for key stakeholders including Meta, NBA, FOX, ESPN, NASCAR, TNT, and UFC."
       },
       {
-        type: "image",
-        src: "./images/user_engagement_chart.png",
-        alt: "Chart showing user engagement over time",
+        "type": "image",
+        "src": "./images/looker_dashboard2.png",
+        "alt": "Automated engagement metrics chart"
       },
       {
-        type: "section",
-        title: "Technical Deep Dive",
-        content: `<ul>
-                <li>Refactored and modularized existing Python data processing scripts, replacing static, hard-coded functions with dynamic ones to improve code maintainability and allow for flexible analysis of user session data.</li>
-                <li>Engineered new tracking metrics in Kibana to capture granular user interactions, including party participation rates, daily active users by VR device, and time spent in specific virtual lobbies.</li>
-                <li>Automated the generation of Pandas DataFrames by creating Kibana dashboard queries, enabling programmatic data retrieval with parameters like date range and country.</li>
-                <li>Led the design and implementation of a user segmentation system to classify users as "New," "Returning," or "Reactivated." This involved architecting and creating a new schema in Google BigQuery to track detailed user session data.</li>
-                <li>Scaled the analytics database to over one million rows, capturing user login instances, session durations, and engagement with specific sports content (NBA, UFC, FOX). This new data powers weekly and monthly reports for key stakeholders.</li>
-            </ul>`,
-      },
+        "type": "section",
+        "title": "Technical Deep Dive",
+        "content": "<ul><li><strong>Serverless Architecture:</strong> Deployed 4 Dockerized Python microservices to Google Cloud Run, utilizing cron jobs for scheduled hourly execution to ensure near real-time data freshness.</li><li><strong>BigQuery Warehousing:</strong> Designed a normalized schema in BigQuery to handle over 1 million rows of session data, optimizing tables for cost-effective querying and long-term storage.</li><li><strong>Automated ETL:</strong> Wrote Python scripts to extract raw JSON from Elastic, transform it into structured Pandas DataFrames, and load it directly into BigQuery, bypassing legacy Excel steps entirely.</li><li><strong>Business Intelligence Integration:</strong> Structured the data specifically for Looker Studio consumption, enabling the creation of interactive dashboards that automatically reflect the latest hourly data without human intervention.</li><li><strong>Metric Engineering:</strong> Refactored the tracking codebase to capture granular user interactions, such as party participation rates and specific VR device usage, providing deeper behavioral insights than previously possible.</li></ul>"
+      }
     ],
-    tools: ["Python", "Google BigQuery", "Elastic (Kibana)", "Docker"],
-    repoName: null, // No repo for this one
+    "tools": ["Python", "Google Cloud Run", "BigQuery", "Docker", "Looker Studio", "Elastic"],
+    "repoName": null
   },
   "infix-to-postfix": {
     title: "Infix to Postfix Expression Converter",
