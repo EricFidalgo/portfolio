@@ -48,52 +48,64 @@ document.addEventListener("DOMContentLoaded", () => {
    * @param {string} sortCriteria - The criteria to sort projects by ('preference' or 'date').
    */
   const renderProjects = (sortCriteria) => {
-    /**
-     * Formats a date string (e.g., "YYYY-MM-DD") into a more readable format ("Month Year").
-     * @param {string} dateString - The date string to format.
-     * @returns {string} The formatted date.
-     */
     const formatDate = (dateString) => {
       const date = new Date(dateString);
-      // Adjust for timezone to prevent off-by-one day errors
       date.setUTCDate(date.getUTCDate() + 1);
-      return date.toLocaleDateString("en-US", {
-        month: "long",
-        year: "numeric",
-      });
+      return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
     };
 
-    // Clear the existing projects before rendering new ones.
+    // --- Helper function to automatically grab an image or YouTube thumbnail ---
+    const getThumbnailUrl = (project) => {
+  // 1. Prioritize your explicitly defined thumbnail
+  if (project.thumbnail) return project.thumbnail;
+  
+  // 2. Fallback to auto-finding an image if a thumbnail isn't provided
+  if (project.contentBlocks) {
+    for (let block of project.contentBlocks) {
+      if (block.type === "image" && block.src) return block.src;
+      if (block.type === "slideshow" && block.slides) {
+        for (let slide of block.slides) {
+          if (slide.type === "image" && slide.src) return slide.src;
+          if (slide.type === "video" && slide.videoId) return `https://img.youtube.com/vi/${slide.videoId}/maxresdefault.jpg`;
+        }
+      }
+    }
+  }
+  return "images/logo.ico"; 
+};
+
     projectsGrid.innerHTML = "";
 
-    // Create a sorted copy of the projects array based on the sort criteria.
     const sortedProjects = [...projectsArray].sort((a, b) => {
-      if (sortCriteria === "preference") {
-        // Sort by preference number in ascending order.
-        return a.preference - b.preference;
-      } else {
-        // Sort by date in descending order (newest first).
-        return new Date(b.date) - new Date(a.date);
-      }
+      if (sortCriteria === "preference") return a.preference - b.preference;
+      return new Date(b.date) - new Date(a.date);
     });
 
-    // Create and append a card for each project.
-    sortedProjects.forEach((project) => {
+    sortedProjects.forEach((project, index) => {
       const projectCard = document.createElement("div");
       projectCard.classList.add("project-card");
+      
+      // Make the very first project a massive Featured Card
+      if (index === 0) {
+        projectCard.classList.add("featured-project");
+      }
+
+      // Extract image and adjust the path so index.html can find it inside the projects folder
+      let thumbSrc = getThumbnailUrl(project);
+      if (thumbSrc.startsWith("./images/")) {
+        thumbSrc = "projects" + thumbSrc.substring(1); 
+      }
+
       projectCard.innerHTML = `
+        <div class="project-card-image">
+            <img src="${thumbSrc}" alt="${project.title} Thumbnail" loading="lazy">
+        </div>
         <div class="project-card-content">
-            <p class="project-card-date">${
-              project.displayDate
-                ? project.displayDate
-                : formatDate(project.date)
-            }</p>
+            <p class="project-card-date">${project.displayDate ? project.displayDate : formatDate(project.date)}</p>
             <h3>${project.title}</h3>
             <p class="project-card-description">${project.description}</p>
             <p class="technologies">${project.technologies}</p>
-            <a href="${
-              project.link
-            }" class="btn btn-primary project-link">View Details</a>
+            <a href="${project.link}" class="btn btn-primary project-link">View Details</a>
         </div>
       `;
       projectsGrid.appendChild(projectCard);

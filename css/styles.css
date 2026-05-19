@@ -210,51 +210,12 @@ section h2::after {
   border-color: var(--primary-color);
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background: var(--surface-color);
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.project-card-content {
-  padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  text-align: center; /* Center all text content in the card */
-}
-
-.project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
 .project-card-date {
   font-size: 0.9rem;
   color: var(--primary-color);
   margin-bottom: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.project-card-description {
-  color: var(--text-secondary-color);
-  margin-bottom: 1rem;
-  flex-grow: 1;
 }
 
 /* --- NEW STYLES for Technologies --- */
@@ -380,13 +341,6 @@ section h2::after {
   border: 2px solid transparent; /* Add transparent border initially */
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add border-color to transition */
 }
-
-.project-card:hover {
-  transform: translateY(-8px); /* Increase lift */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Softer, larger shadow */
-  border-color: var(--primary-color); /* Add primary color border on hover */
-}
-
 /* Animation Keyframes */
 @keyframes fadeIn {
   from {
@@ -550,4 +504,106 @@ section h2::after {
   color: #FFD700;
   /* Make the icon glow slightly */
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* --- PROJECTS SECTION --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 2.5rem;
+}
+
+/* Card Base Styles */
+.project-card {
+  background: var(--surface-color);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-color);
+}
+
+/* Card Image Styles */
+.project-card-image {
+  width: 100%;
+  height: 240px; /* Big, consistent image area */
+  overflow: hidden;
+  background: #0b0b0b; /* Dark backdrop for images */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-card-image img {
+  transform: scale(1.05); /* Smooth zoom effect on hover */
+}
+
+/* Card Content Area */
+.project-card-content {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+}
+
+.project-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.project-card-description {
+  color: var(--text-secondary-color);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  font-size: 1.05rem;
+}
+
+/* --- DESKTOP GRID & FEATURED PROJECT --- */
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns under the featured one */
+  }
+
+  /* Make the first item span both columns as a massive banner */
+  .featured-project {
+    grid-column: 1 / -1;
+    flex-direction: row; /* Image on left, text on right */
+    align-items: stretch;
+  }
+
+  .featured-project .project-card-image {
+    width: 55%; /* Image takes up more than half */
+    height: auto; 
+    min-height: 380px;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .featured-project .project-card-content {
+    width: 45%;
+    padding: 3.5rem; /* Lots of breathing room */
+    justify-content: center; /* Center content vertically */
+  }
+
+  .featured-project h3 {
+    font-size: 2.3rem; /* Extra large title */
+  }
+  
+  .featured-project .project-card-description {
+    font-size: 1.15rem; /* Slightly larger description */
+  }
 }

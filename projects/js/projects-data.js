@@ -1,89 +1,91 @@
 /* project-data.js */
 const projectsData = {
 "ybvr-internship": {
-    "title": "Data Engineering at YBVR",
-    "meta": "Internship: May 2025 – July 2025 | Part-Time: September 2025 - June 2026",
-    "date": "2025-10-03",
-    "displayDate": "May 2025 – June 2026",
-    "description": "Architected a serverless ETL pipeline using Docker and Google Cloud Run to automate user analytics for VR applications, reducing reporting latency from weekly to hourly.",
-    "preference": 1,
-    "contentBlocks": [
+    title: "Data Engineering at YBVR",
+    thumbnail: "./images/ybvr/main.jpg",
+    meta: "Internship: May 2025 – July 2025 | Part-Time: September 2025 - June 2026",
+    date: "2025-10-03",
+    displayDate: "May 2025 – June 2026",
+    description: "Architected a serverless ETL pipeline using Docker and Google Cloud Run to automate user analytics for VR applications, reducing reporting latency from weekly to hourly.",
+    preference: 1,
+    contentBlocks: [
       {
-        "type": "section",
-        "title": "The Challenge",
-        "content": "The legacy reporting workflow for the Xtadium application relied on a manual process: generating temporary Excel files, copying tables into a master spreadsheet, and manually updating PowerPoint slides. This workflow was error-prone, labor-intensive, and limited stakeholders to weekly updates, making it impossible to react to user behavior in real-time."
+        type: "section",
+        title: "The Challenge",
+        content: "The legacy reporting workflow for the Xtadium application relied on a manual process: generating temporary Excel files, copying tables into a master spreadsheet, and manually updating PowerPoint slides. This workflow was error-prone, labor-intensive, and limited stakeholders to weekly updates, making it impossible to react to user behavior in real-time."
       },
       {
-        "type": "slideshow",
-        "slides": [
+        type: "slideshow",
+        slides: [
           {
-            "type": "image",
-            "src": "./images/ybvr/xtadium_app.png",
-            "alt": "Xtadium Application Screenshot"
+            type: "image",
+            src: "./images/ybvr/xtadium_app.png",
+            alt: "Xtadium Application Screenshot"
           },
           {
-            "type": "image",
-            "src": "./images/ybvr/kibana_dashboard.png",
-            "alt": "BigQuery Schema and Cloud Run Architecture"
+            type: "image",
+            src: "./images/ybvr/kibana_dashboard.png",
+            alt: "BigQuery Schema and Cloud Run Architecture"
           },
           {
-            "type": "image",
-            "src": "./images/ybvr/bigquery_schema.png",
-            "alt": "BigQuery Schema and Cloud Run Architecture"
+            type: "image",
+            src: "./images/ybvr/bigquery_schema.png",
+            alt: "BigQuery Schema and Cloud Run Architecture"
           }
         ]
       },
       {
-        "type": "section",
-        "title": "The Solution",
-        "content": "I deprecated the manual Excel workflow by engineering a fully automated, serverless ETL pipeline. I containerized the extraction logic into four distinct Docker images, each responsible for querying specific Elastic metrics and uploading them to dedicated BigQuery tables. These containers are orchestrated via Google Cloud Run and triggered by hourly cron jobs, ensuring continuous data ingestion. To visualize this data, I integrated BigQuery with Data Studio, enabling dynamic, self-updating dashboards."
+        type: "section",
+        title: "The Solution",
+        content: "I deprecated the manual Excel workflow by engineering a fully automated, serverless ETL pipeline. I containerized the extraction logic into four distinct Docker images, each responsible for querying specific Elastic metrics and uploading them to dedicated BigQuery tables. These containers are orchestrated via Google Cloud Run and triggered by hourly cron jobs, ensuring continuous data ingestion. To visualize this data, I integrated BigQuery with Data Studio, enabling dynamic, self-updating dashboards."
       },
       {
-        "type": "image",
-        "src": "./images/ybvr/looker_dashboard.png",
-        "alt": "Data Studio Dashboard showing real-time metrics"
+        type: "image",
+        src: "./images/ybvr/looker_dashboard.png",
+        alt: "Data Studio Dashboard showing real-time metrics"
       },
       {
-        "type": "section",
-        "title": "The Impact",
-        "content": "The transition from manual reporting to an automated pipeline reduced data latency from weekly to hourly, providing near real-time insights. We eliminated 100% of human data entry errors and replaced static presentations with live dashboards. These tools are now the primary source of truth for key stakeholders including Meta, NBA, FOX, ESPN, NASCAR, TNT, and UFC."
+        type: "section",
+        title: "The Impact",
+        content: "The transition from manual reporting to an automated pipeline reduced data latency from weekly to hourly, providing near real-time insights. We eliminated 100% of human data entry errors and replaced static presentations with live dashboards. These tools are now the primary source of truth for key stakeholders including Meta, NBA, FOX, ESPN, NASCAR, TNT, and UFC."
       },
       {
-        "type": "slideshow",
-        "slides": [
+        type: "slideshow",
+        slides: [
           {
-            "type": "image",
-            "src": "./images/ybvr/looker_dashboard2.png",
-          "alt": "Automated engagement metrics chart"
+            type: "image",
+            src: "./images/ybvr/looker_dashboard2.png",
+            alt: "Automated engagement metrics chart"
           },
           {
-            "type": "image",
-            "src": "./images/ybvr/looker_dashboard3.png",
-            "alt": "Automated engagement metrics chart"
+            type: "image",
+            src: "./images/ybvr/looker_dashboard3.png",
+            alt: "Automated engagement metrics chart"
           },
           {
-            "type": "image",
-            "src": "./images/ybvr/looker_dashboard4.png",
-            "alt": "Automated engagement metrics chart"
+            type: "image",
+            src: "./images/ybvr/looker_dashboard4.png",
+            alt: "Automated engagement metrics chart"
           },
           {
-            "type": "image",
-            "src": "./images/ybvr/looker_dashboard5.png",
-            "alt": "Automated engagement metrics chart"
+            type: "image",
+            src: "./images/ybvr/looker_dashboard5.png",
+            alt: "Automated engagement metrics chart"
           }
         ]
       },
       {
-        "type": "section",
-        "title": "Technical Deep Dive",
-        "content": "<ul><li><strong>Serverless Architecture:</strong> Deployed 4 Dockerized Python microservices to Google Cloud Run, utilizing cron jobs for scheduled hourly execution to ensure near real-time data freshness.</li><li><strong>BigQuery Warehousing:</strong> Designed a normalized schema in BigQuery to handle over 4 million rows of session data, optimizing tables for cost-effective querying and long-term storage.</li><li><strong>Automated ETL:</strong> Wrote Python scripts to extract raw JSON from Elastic, transform it into structured Pandas DataFrames, and load it directly into BigQuery, bypassing legacy Excel steps entirely.</li><li><strong>Business Intelligence Integration:</strong> Structured the data specifically for Data Studio consumption, enabling the creation of interactive dashboards that automatically reflect the latest hourly data without human intervention.</li><li><strong>Metric Engineering:</strong> Refactored the tracking codebase to capture granular user interactions, such as party participation rates and specific VR device usage, providing deeper behavioral insights than previously possible.</li></ul>"
+        type: "section",
+        title: "Technical Deep Dive",
+        content: "<ul><li><strong>Serverless Architecture:</strong> Deployed 4 Dockerized Python microservices to Google Cloud Run, utilizing cron jobs for scheduled hourly execution to ensure near real-time data freshness.</li><li><strong>BigQuery Warehousing:</strong> Designed a normalized schema in BigQuery to handle over 4 million rows of session data, optimizing tables for cost-effective querying and long-term storage.</li><li><strong>Automated ETL:</strong> Wrote Python scripts to extract raw JSON from Elastic, transform it into structured Pandas DataFrames, and load it directly into BigQuery, bypassing legacy Excel steps entirely.</li><li><strong>Business Intelligence Integration:</strong> Structured the data specifically for Data Studio consumption, enabling the creation of interactive dashboards that automatically reflect the latest hourly data without human intervention.</li><li><strong>Metric Engineering:</strong> Refactored the tracking codebase to capture granular user interactions, such as party participation rates and specific VR device usage, providing deeper behavioral insights than previously possible.</li></ul>"
       }
     ],
-    "tools": ["Python", "Google Cloud Run", "BigQuery", "Docker", "Data Studio", "Elastic"],
-    "repoName": null
+    tools: ["Python", "Google Cloud Run", "BigQuery", "Docker", "Data Studio", "Elastic"],
+    repoName: null
   },
   "house-price-prediction-model": {
     title: "House Price Prediction Model",
+    thumbnail: "./images/house/main.jpg",
     meta: "Completed: January 2025",
     date: "2025-01-01",
     description:
@@ -139,6 +141,7 @@ const projectsData = {
   },
   "employee-api-service": {
     title: "Employee Management RESTful API",
+    thumbnail: "./images/employee/main.jpg",
     meta: "Completed: October 2025",
     date: "2025-10-01",
     description:
@@ -204,6 +207,7 @@ const projectsData = {
   },
   "llc-web-scraper": {
     title: "Florida Biz Scraper",
+    thumbnail: "./images/llc/main.png",
     meta: "Completed: July 2024",
     date: "2024-08-01",
     description:
@@ -257,6 +261,7 @@ const projectsData = {
   },
   "password-server": {
     title: "Local Database with Hash Maps and Encryption",
+    thumbnail: "./images/encrypt/main.png",
     meta: "Completed: November 2024",
     date: "2024-11-15",
     description:
