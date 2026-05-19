@@ -2,9 +2,9 @@
 const projectsData = {
 "ybvr-internship": {
     "title": "Data Engineering at YBVR",
-    "meta": "Internship: May 2025 – July 2025 | Part-Time: September 2025 - Current",
+    "meta": "Internship: May 2025 – July 2025 | Part-Time: September 2025 - June 2026",
     "date": "2025-10-03",
-    "displayDate": "May 2025 – Present",
+    "displayDate": "May 2025 – June 2026",
     "description": "Architected a serverless ETL pipeline using Docker and Google Cloud Run to automate user analytics for VR applications, reducing reporting latency from weekly to hourly.",
     "preference": 1,
     "contentBlocks": [
@@ -31,12 +31,12 @@ const projectsData = {
       {
         "type": "section",
         "title": "The Solution",
-        "content": "I deprecated the manual Excel workflow by engineering a fully automated, serverless ETL pipeline. I containerized the extraction logic into four distinct Docker images, each responsible for querying specific Elastic metrics and uploading them to dedicated BigQuery tables. These containers are orchestrated via Google Cloud Run and triggered by hourly cron jobs, ensuring continuous data ingestion. To visualize this data, I integrated BigQuery with Looker Studio, enabling dynamic, self-updating dashboards."
+        "content": "I deprecated the manual Excel workflow by engineering a fully automated, serverless ETL pipeline. I containerized the extraction logic into four distinct Docker images, each responsible for querying specific Elastic metrics and uploading them to dedicated BigQuery tables. These containers are orchestrated via Google Cloud Run and triggered by hourly cron jobs, ensuring continuous data ingestion. To visualize this data, I integrated BigQuery with Data Studio, enabling dynamic, self-updating dashboards."
       },
       {
         "type": "image",
         "src": "./images/looker_dashboard.png",
-        "alt": "Looker Studio Dashboard showing real-time metrics"
+        "alt": "Data Studio Dashboard showing real-time metrics"
       },
       {
         "type": "section",
@@ -44,17 +44,37 @@ const projectsData = {
         "content": "The transition from manual reporting to an automated pipeline reduced data latency from weekly to hourly, providing near real-time insights. We eliminated 100% of human data entry errors and replaced static presentations with live dashboards. These tools are now the primary source of truth for key stakeholders including Meta, NBA, FOX, ESPN, NASCAR, TNT, and UFC."
       },
       {
-        "type": "image",
-        "src": "./images/looker_dashboard2.png",
-        "alt": "Automated engagement metrics chart"
+        "type": "slideshow",
+        "slides": [
+          {
+            "type": "image",
+            "src": "./images/looker_dashboard2.png",
+          "alt": "Automated engagement metrics chart"
+          },
+          {
+            "type": "image",
+            "src": "./images/looker_dashboard3.png",
+            "alt": "Automated engagement metrics chart"
+          },
+          {
+            "type": "image",
+            "src": "./images/looker_dashboard4.png",
+            "alt": "Automated engagement metrics chart"
+          },
+          {
+            "type": "image",
+            "src": "./images/looker_dashboard5.png",
+            "alt": "Automated engagement metrics chart"
+          }
+        ]
       },
       {
         "type": "section",
         "title": "Technical Deep Dive",
-        "content": "<ul><li><strong>Serverless Architecture:</strong> Deployed 4 Dockerized Python microservices to Google Cloud Run, utilizing cron jobs for scheduled hourly execution to ensure near real-time data freshness.</li><li><strong>BigQuery Warehousing:</strong> Designed a normalized schema in BigQuery to handle over 1 million rows of session data, optimizing tables for cost-effective querying and long-term storage.</li><li><strong>Automated ETL:</strong> Wrote Python scripts to extract raw JSON from Elastic, transform it into structured Pandas DataFrames, and load it directly into BigQuery, bypassing legacy Excel steps entirely.</li><li><strong>Business Intelligence Integration:</strong> Structured the data specifically for Looker Studio consumption, enabling the creation of interactive dashboards that automatically reflect the latest hourly data without human intervention.</li><li><strong>Metric Engineering:</strong> Refactored the tracking codebase to capture granular user interactions, such as party participation rates and specific VR device usage, providing deeper behavioral insights than previously possible.</li></ul>"
+        "content": "<ul><li><strong>Serverless Architecture:</strong> Deployed 4 Dockerized Python microservices to Google Cloud Run, utilizing cron jobs for scheduled hourly execution to ensure near real-time data freshness.</li><li><strong>BigQuery Warehousing:</strong> Designed a normalized schema in BigQuery to handle over 4 million rows of session data, optimizing tables for cost-effective querying and long-term storage.</li><li><strong>Automated ETL:</strong> Wrote Python scripts to extract raw JSON from Elastic, transform it into structured Pandas DataFrames, and load it directly into BigQuery, bypassing legacy Excel steps entirely.</li><li><strong>Business Intelligence Integration:</strong> Structured the data specifically for Data Studio consumption, enabling the creation of interactive dashboards that automatically reflect the latest hourly data without human intervention.</li><li><strong>Metric Engineering:</strong> Refactored the tracking codebase to capture granular user interactions, such as party participation rates and specific VR device usage, providing deeper behavioral insights than previously possible.</li></ul>"
       }
     ],
-    "tools": ["Python", "Google Cloud Run", "BigQuery", "Docker", "Looker Studio", "Elastic"],
+    "tools": ["Python", "Google Cloud Run", "BigQuery", "Docker", "Data Studio", "Elastic"],
     "repoName": null
   },
   "infix-to-postfix": {

@@ -65,18 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
           const dotsHtml = block.slides
             .map(
-              (_, index) =>
-                `<span class="dot ${
-                  index === 0 ? "active" : ""
-                }" onclick="currentSlide(${index + 1})"></span>`
+              (_, index) => `<span class="dot ${index === 0 ? "active" : ""}"></span>`
             )
             .join("");
 
           contentHtml += `
             <div class="slideshow-container">
               <div class="slides-wrapper">${slidesHtml}</div>
-              <button class="prev" onclick="changeSlide(-1)">❮</button>
-              <button class="next" onclick="changeSlide(1)">❯</button>
+              <button class="prev">❮</button>
+              <button class="next">❯</button>
               <div class="dots">${dotsHtml}</div>
             </div>`;
         }
@@ -156,56 +153,43 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   // --- Slideshow & Video Player Logic ---
-  let slideIndex = 1;
-  const slidesWrapper = document.querySelector(".slides-wrapper");
+// --- Slideshow & Video Player Logic ---
+  const slideshowContainers = document.querySelectorAll(".slideshow-container");
 
-  // Exit if slideshow doesn't exist on the page
-  if (!slidesWrapper) {
-    // We still need the copy to clipboard logic to run
-  } else {
-    // Function to show a specific slide
-    window.showSlides = function (n) {
-      const slides = document.getElementsByClassName("slide");
-      const dots = document.getElementsByClassName("dot");
+  slideshowContainers.forEach((container) => {
+    let slideIndex = 1;
+    const slides = container.querySelectorAll(".slide");
+    const dots = container.querySelectorAll(".dot");
+    const wrapper = container.querySelector(".slides-wrapper");
+    const prevBtn = container.querySelector(".prev");
+    const nextBtn = container.querySelector(".next");
 
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
+    const showSlides = (n) => {
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
 
-      // Update dots
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
-      }
+      dots.forEach((dot) => dot.classList.remove("active"));
       if (dots[slideIndex - 1]) {
         dots[slideIndex - 1].classList.add("active");
       }
 
-      // Move the slides wrapper
-      if (slidesWrapper) {
-        slidesWrapper.style.transform = `translateX(-${
-          (slideIndex - 1) * 100
-        }%)`;
+      if (wrapper) {
+        wrapper.style.transform = `translateX(-${(slideIndex - 1) * 100}%)`;
       }
     };
 
-    // Next/previous controls
-    window.changeSlide = function (n) {
-      showSlides((slideIndex += n));
-    };
+    if (prevBtn) prevBtn.addEventListener("click", () => { slideIndex--; showSlides(slideIndex); });
+    if (nextBtn) nextBtn.addEventListener("click", () => { slideIndex++; showSlides(slideIndex); });
 
-    // Thumbnail image controls
-    window.currentSlide = function (n) {
-      showSlides((slideIndex = n));
-    };
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        slideIndex = index + 1;
+        showSlides(slideIndex);
+      });
+    });
 
-    // Initialize the first slide
-    if (document.querySelector(".slideshow-container")) {
-      showSlides(slideIndex);
-    }
-  } // End of slideshow-related logic block
+    showSlides(slideIndex);
+  });
 
   // Video click handler
   // Use querySelectorAll to handle multiple video containers if they exist
