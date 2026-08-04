@@ -164,7 +164,18 @@ section h2::after {
   display: block;
   font-weight: 700;
   color: var(--text-color);
+  margin-bottom: 0.25rem;
 }
+
+.achievement-description {
+  line-height: 1.6;
+}
+
+.achievement-description a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
 /* Projects Section */
 .sort-buttons {
   text-align: center;
