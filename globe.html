@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- globe.html: the Dynamic Portfolio, a green war-room globe with pins. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Eric Fidalgo - Dynamic Portfolio</title>
+    <meta name="description" content="Eric Fidalgo's portfolio on a spinning globe. Tap a pin to open its story." />
+    <link rel="icon" type="image/x-icon" href="./images/logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/globe.css" />
+  </head>
+  <body>
+    <div id="map" class="globe-map" role="region" aria-label="World map with portfolio pins"></div>
+
+    <!-- War-room effects (#14). Purely visual, so hidden from screen readers. -->
+    <div class="fx" aria-hidden="true">
+      <div class="fx-halo"></div>
+      <div class="fx-sweep"></div>
+      <div class="fx-scan"></div>
+    </div>
+
+    <header class="globe-bar">
+      <h1 class="globe-title">Eric Fidalgo <span>// world map</span></h1>
+      <a class="globe-classic" href="index.html">Classic portfolio</a>
+    </header>
+
+    <p class="globe-hint" id="globe-hint">Drag to turn · tap a pin</p>
+
+    <!-- The one reusable terminal window (#17). Filled from js/pins-data.js. -->
+    <section id="term" class="term" role="dialog" aria-labelledby="term-title" hidden>
+      <div class="term-bar">
+        <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <h2 id="term-title" class="term-title"></h2>
+        <button type="button" class="term-close" id="term-close" aria-label="Close window">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="term-body" id="term-body"></div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+    <script src="js/pins-data.js"></script>
+    <script src="js/globe.js"></script>
+  </body>
+</html>
