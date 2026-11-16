@@ -1,0 +1,9 @@
+/* theme.css: the one green hacker look shared by the intro, the globe and later the whole site. */
+:root {
+  --green-bright: #39ff6a; /* column heads, borders, glow, pins' text */
+  --green-dim: #0f7a2e;    /* column tails, land, quiet text */
+  --green-glow: rgba(57, 255, 106, 0.35);
+  --hack-black: #020804;   /* page and ocean background */
+  --hack-amber: #ffb000;   /* pin targets */
+  --hack-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
