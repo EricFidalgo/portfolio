@@ -294,6 +294,53 @@ const projectsData = {
     tools: ["C++", "Libsodium", "Argon2id"],
     repoName: "PasswordServer",
   },
+  "ovi-wellness-website": {
+    title: "OVI Wellness Website & Branding",
+    thumbnail: "./images/ovi/main.jpg",
+    meta: "Client Project: 2026",
+    date: "2026-01-01",
+    displayDate: "2026",
+    description:
+      "Logo and a hand-built, bilingual website for a medical wellness clinic, made in two months of close work with the client.",
+    preference: 6,
+    contentBlocks: [
+      {
+        type: "section",
+        title: "The Challenge",
+        content:
+          "OVI Wellness is a doctor-led medical wellness clinic in St. Petersburg, Florida. It offers a wide range of treatments, from hormone optimization and medical weight loss to peptide therapy, IV therapy and specialty lab testing. The clinic wanted a logo and a website that present all of these services in one place, where a prospective patient can compare the options and book a consultation.",
+      },
+      {
+        type: "slideshow",
+        slides: [
+          {
+            type: "image",
+            src: "./images/ovi/main.jpg",
+            alt: "OVI Wellness home page on a desktop screen",
+          },
+          {
+            type: "image",
+            src: "./images/ovi/phone.jpg",
+            alt: "OVI Wellness home page on a phone screen",
+          },
+        ],
+      },
+      {
+        type: "section",
+        title: "The Solution",
+        content:
+          'Over two months of close collaboration with the clinic, I designed custom logo artwork and built a fully custom website from the ground up. The site gives each treatment area its own page and adds a team page, FAQs, membership plans, the clinic\'s location and hours, and a "Book Your Consultation" call to action throughout. It also includes an English and Spanish language switch and scroll animations, and it adapts to both phone and desktop screens.',
+      },
+      {
+        type: "section",
+        title: "The Impact",
+        content:
+          'OVI Wellness now has its own logo and a live website. Patients can browse every treatment, compare membership plans, find the clinic and book a consultation from a phone or a desktop, in English or Spanish. See the live site at <a href="https://oviwellness.com/" target="_blank" rel="noopener noreferrer">oviwellness.com</a>.',
+      },
+    ],
+    tools: ["HTML", "CSS", "JavaScript", "Bootstrap", "GSAP"],
+    repoName: null,
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
