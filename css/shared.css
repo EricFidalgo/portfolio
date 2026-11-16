@@ -98,6 +98,17 @@ body {
 .hamburger {
   display: none;
   cursor: pointer;
+  /* A real <button>: drop the browser's default look, keep a 44px+ tap target. */
+  background: none;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 .bar {
@@ -214,7 +225,9 @@ body {
     backdrop-filter: blur(10px);
     width: 100%;
     height: calc(100vh - 70px); /* Fill the rest of the viewport height */
-    transition: 0.3s;
+    /* Hidden while closed so keyboard and screen-reader users skip it. */
+    visibility: hidden;
+    transition: left 0.3s, visibility 0.3s;
     /* Use flexbox for better centering of nav items */
     display: flex;
     flex-direction: column;
@@ -224,6 +237,7 @@ body {
 
   .nav-menu.active {
     left: 0;
+    visibility: visible;
   }
 
   /* Increase spacing and font size for better touch targets */

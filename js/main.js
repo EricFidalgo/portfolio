@@ -10,24 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setViewportHeight(); // Set it on initial load
   window.addEventListener("resize", setViewportHeight); // Reset on resize
 
-  // --- Navbar Hamburger Logic ---
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-
-  // Toggle 'active' class on hamburger and nav-menu when hamburger is clicked.
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  });
-
-  // Close the mobile menu when a navigation link is clicked.
-  document.querySelectorAll(".nav-link").forEach((n) =>
-    n.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    })
-  );
-
   // --- Project Sorting and Rendering Logic ---
   const projectsGrid = document.querySelector(".projects-grid");
   const sortPreferenceBtn = document.getElementById("sort-preference");
