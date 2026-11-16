@@ -1,0 +1,454 @@
+/* globe.css: the Dynamic Portfolio globe page. Every colour comes from css/theme.css. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--hack-black);
+  color: var(--green-bright);
+  font-family: var(--hack-mono);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Map (#12, #13) ---------- */
+
+.globe-map {
+  position: fixed;
+  inset: 0;
+  background: var(--hack-black);
+}
+
+/* Keep MapLibre's attribution readable but in the site colours. */
+.globe-map .maplibregl-ctrl-attrib {
+  background: color-mix(in srgb, var(--hack-black) 80%, transparent);
+  color: var(--green-dim);
+  font-family: var(--hack-mono);
+  font-size: 11px;
+}
+.globe-map .maplibregl-ctrl-attrib a {
+  color: var(--green-bright);
+}
+.globe-map .maplibregl-ctrl-attrib-button {
+  background-color: var(--green-dim);
+  border-radius: 50%;
+}
+
+.globe-fallback {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--green-dim);
+}
+.globe-fallback button {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--green-bright);
+  background: transparent;
+  color: var(--green-bright);
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ---------- War-room effects (#14) ---------- */
+
+.fx {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  box-shadow: inset 0 0 90px var(--green-glow);
+  /* globe.js keeps --globe-d equal to the globe's width on screen. */
+  --globe-d: 70vmin;
+}
+
+.fx-halo,
+.fx-sweep {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--globe-d);
+  height: var(--globe-d);
+  margin: calc(var(--globe-d) / -2) 0 0 calc(var(--globe-d) / -2);
+  border-radius: 50%;
+}
+
+/* Soft green glow around the rim of the globe. */
+.fx-halo {
+  box-shadow:
+    0 0 40px 6px var(--green-glow),
+    inset 0 0 50px 4px var(--green-glow);
+  opacity: 0.6;
+}
+
+/* A slow radar sweep: a fading wedge that turns once every 8 seconds. */
+.fx-sweep {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 290deg,
+    color-mix(in srgb, var(--green-bright) 4%, transparent) 320deg,
+    color-mix(in srgb, var(--green-bright) 22%, transparent) 359deg,
+    var(--green-bright) 360deg
+  );
+  mix-blend-mode: screen;
+  animation: fx-turn 8s linear infinite;
+}
+
+@keyframes fx-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Faint scan lines over the whole screen, plus a dark vignette at the edges. */
+.fx-scan {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 2px,
+      color-mix(in srgb, var(--hack-black) 35%, transparent) 2px 3px
+    ),
+    radial-gradient(
+      ellipse at center,
+      transparent 55%,
+      color-mix(in srgb, var(--hack-black) 70%, transparent) 100%
+    );
+}
+
+/* ---------- Header and hint ---------- */
+
+.globe-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: max(12px, env(safe-area-inset-top)) 16px 12px;
+  pointer-events: none;
+}
+
+.globe-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--green-glow);
+}
+.globe-title span {
+  color: var(--green-dim);
+  font-weight: 400;
+}
+
+.globe-classic {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--green-dim);
+  color: var(--green-bright);
+  background: color-mix(in srgb, var(--hack-black) 70%, transparent);
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.globe-classic:hover,
+.globe-classic:focus-visible {
+  border-color: var(--green-bright);
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+.globe-hint {
+  position: fixed;
+  left: 16px;
+  top: calc(max(12px, env(safe-area-inset-top)) + 52px);
+  color: var(--green-dim);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+body.term-open .globe-hint {
+  opacity: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--green-bright);
+  outline-offset: 2px;
+}
+
+/* ---------- Pins (#16) ---------- */
+
+/* The marker element is a 44px button: the whole square is the tap target. */
+.pin {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.pin-dot,
+.pin-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pin-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--hack-amber);
+  box-shadow: 0 0 10px 2px var(--hack-amber);
+}
+
+.pin-ring {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--hack-amber);
+  animation: pin-pulse 2.4s ease-out infinite;
+}
+
+@keyframes pin-pulse {
+  from {
+    width: 12px;
+    height: 12px;
+    opacity: 0.9;
+  }
+  to {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+  }
+}
+
+/* A pin on the far side of the globe hides, so it cannot be seen or tapped through the planet. */
+.maplibregl-marker-covered {
+  visibility: hidden;
+}
+
+/* Crosshair ticks so the pin reads as a target. */
+.pin::before,
+.pin::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: var(--hack-amber);
+  opacity: 0.7;
+  transform: translate(-50%, -50%);
+}
+.pin::before {
+  width: 30px;
+  height: 1px;
+}
+.pin::after {
+  width: 1px;
+  height: 30px;
+}
+
+.pin-coords {
+  position: absolute;
+  left: 50%;
+  top: 38px;
+  transform: translateX(-50%);
+  color: var(--green-bright);
+  font-family: var(--hack-mono);
+  font-size: 10px;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-shadow: 0 0 4px var(--hack-black), 0 0 6px var(--hack-black);
+  pointer-events: none;
+}
+
+.pin:hover .pin-dot,
+.pin:focus-visible .pin-dot,
+.pin[aria-expanded="true"] .pin-dot {
+  box-shadow: 0 0 16px 5px var(--hack-amber);
+}
+
+/* ---------- Terminal window (#17) ---------- */
+
+.term {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  /* Phone first: a sheet along the bottom with a 16px gutter. */
+  left: 16px;
+  right: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  max-height: 58dvh;
+  border: 1px solid var(--green-bright);
+  background: var(--hack-black);
+  box-shadow: 0 0 24px var(--green-glow);
+}
+.term[hidden] {
+  display: none;
+}
+
+.term-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 12px;
+  border-bottom: 1px solid var(--green-dim);
+}
+
+.term-dots {
+  display: flex;
+  gap: 5px;
+}
+.term-dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--green-dim);
+}
+
+.term-title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.term-close {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-left: 1px solid var(--green-dim);
+  background: transparent;
+  color: var(--green-bright);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.term-close:focus-visible {
+  outline-offset: -4px;
+}
+.term-close:hover {
+  background: color-mix(in srgb, var(--green-bright) 12%, transparent);
+}
+
+.term-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 14px 16px 18px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.term-block + .term-block {
+  margin-top: 14px;
+}
+
+.term-line {
+  min-height: 1.55em;
+  overflow-wrap: anywhere;
+}
+.term-waiting {
+  visibility: hidden;
+}
+
+.term-heading {
+  color: var(--hack-amber);
+  font-weight: 600;
+}
+.term-heading::before {
+  content: "## ";
+  color: var(--green-dim);
+}
+
+.term-text::before {
+  content: "> ";
+  color: var(--green-dim);
+}
+
+.term-link a {
+  color: var(--green-bright);
+  text-underline-offset: 3px;
+}
+.term-link::before {
+  content: "$ open ";
+  color: var(--green-dim);
+}
+
+/* The blinking block cursor sits on the line being typed. */
+.term-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--green-bright);
+  animation: term-blink 1s steps(1) infinite;
+}
+
+@keyframes term-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Desktop: a window on the right, clear of the globe's centre. */
+@media (min-width: 768px) {
+  .term {
+    left: auto;
+    right: 32px;
+    bottom: auto;
+    top: 50%;
+    width: 420px;
+    max-height: 70vh;
+    transform: translateY(-50%);
+  }
+  .globe-title {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Reduced motion: every animation stops (#14) ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-sweep,
+  .pin-ring,
+  .term-cursor::after {
+    animation: none;
+  }
+  /* A still sweep wedge reads as a broken animation, so hide it. */
+  .fx-sweep {
+    display: none;
+  }
+  .pin-ring {
+    width: 26px;
+    height: 26px;
+    opacity: 0.6;
+  }
+  .globe-hint {
+    transition: none;
+  }
+}
