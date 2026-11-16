@@ -130,30 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Generate the page content first
   generateProjectPage();
 
-  // --- Navbar Hamburger Logic ---
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-
-  if (hamburger) {
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navMenu.classList.toggle("active");
-    });
-  }
-
-  document.querySelectorAll(".nav-link").forEach((n) =>
-    n.addEventListener("click", () => {
-      if (hamburger) {
-        hamburger.classList.remove("active");
-      }
-      if (navMenu) {
-        navMenu.classList.remove("active");
-      }
-    })
-  );
-
   // --- Slideshow & Video Player Logic ---
-// --- Slideshow & Video Player Logic ---
   const slideshowContainers = document.querySelectorAll(".slideshow-container");
 
   slideshowContainers.forEach((container) => {

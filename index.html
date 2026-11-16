@@ -5,6 +5,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eric Fidalgo - Portfolio</title>
+    <meta
+      name="description"
+      content="Eric Fidalgo, data engineer and FSU Computer Science graduate. Data pipelines, backends and cloud systems with Python, SQL, Google Cloud and AWS."
+    />
+    <link rel="canonical" href="https://ericfidalgo.github.io/portfolio/" />
+
+    <!-- Link previews (Open Graph, used by LinkedIn, iMessage, Slack, ...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eric Fidalgo" />
+    <meta property="og:title" content="Eric Fidalgo - Data Engineer" />
+    <meta
+      property="og:description"
+      content="Data engineer and FSU Computer Science graduate. Data pipelines, backends and cloud systems with Python, SQL, Google Cloud and AWS."
+    />
+    <meta property="og:url" content="https://ericfidalgo.github.io/portfolio/" />
+    <meta
+      property="og:image"
+      content="https://ericfidalgo.github.io/portfolio/images/og-preview.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Eric Fidalgo, Data Engineer: Python, SQL, Google Cloud, AWS"
+    />
+
+    <!-- X / Twitter: large-image card; title, text and image come from og: above -->
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/x-icon" href="./images/logo.ico" />
     <link rel="stylesheet" href="css/shared.css" />
     <link rel="stylesheet" href="css/styles.css" />
@@ -27,7 +56,7 @@
     <nav class="navbar">
       <div class="container">
         <a href="#home" class="nav-logo">Eric Fidalgo</a>
-        <ul class="nav-menu">
+        <ul id="nav-menu" class="nav-menu">
           <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
           <li class="nav-item">
             <a href="#projects" class="nav-link">Projects</a>
@@ -39,11 +68,17 @@
             <a href="#contact" class="nav-link">Contact</a>
           </li>
         </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+        <button
+          type="button"
+          class="hamburger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
       </div>
     </nav>
 
@@ -233,6 +268,8 @@
             <div class="skill-list">
               <span class="skill-pill">AWS (Lambda, CloudFront)</span>
               <span class="skill-pill">Google Cloud Platform</span>
+              <span class="skill-pill">BigQuery</span>
+              <span class="skill-pill">Cloud Run</span>
               <span class="skill-pill">Linux</span>
               <span class="skill-pill">Linode</span>
             </div>
@@ -254,6 +291,7 @@
             <h3>Frameworks & Libraries</h3>
             <div class="skill-list">
               <span class="skill-pill">Elastic (Kibana)</span>
+              <span class="skill-pill">Looker Studio</span>
               <span class="skill-pill">Pandas</span>
               <span class="skill-pill">NumPy</span>
               <span class="skill-pill">Scikit-Learn</span>
@@ -307,6 +345,7 @@
     </footer>
 
     <script src="projects/js/projects-data.js"></script>
+    <script src="js/nav.js"></script>
     <script src="js/main.js"></script>
     <script>
       document.getElementById("copyright-year").textContent =
